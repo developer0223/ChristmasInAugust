@@ -13,6 +13,5 @@
             public static readonly string PLANET = "Planet";
             public static readonly string PLAYER = "Player";
         }
-
     }
 }

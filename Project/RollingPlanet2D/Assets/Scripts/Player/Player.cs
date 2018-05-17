@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Utility;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -26,7 +27,13 @@ namespace MainScene.Player
 
         #region Enum
         public enum State { Idle, Move, Damage, Die }
-        public enum Direction { Left, Right }
+        public enum Direction { Left, Right, None}
+        #endregion
+
+        #region Variables
+        public const string IDLE = "isIdle";
+        public const string LEFT = "isLeftWalking";
+        public const string RIGHT = "isRightWalking";
         #endregion
 
         private void Awake()
@@ -45,22 +52,14 @@ namespace MainScene.Player
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 Move(Direction.Left);
-                animator.SetBool("isIdle", false);
-                animator.SetBool("isLeftWalking", true);
-                animator.SetBool("isRightWalking", false);
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 Move(Direction.Right);
-                animator.SetBool("isIdle", false);
-                animator.SetBool("isLeftWalking", false);
-                animator.SetBool("isRightWalking", true);
             }
             else
             {
-                animator.SetBool("isIdle", true);
-                animator.SetBool("isLeftWalking", false);
-                animator.SetBool("isRightWalking", false);
+                Move(Direction.None);
             }
 #elif UNITY_ANDROID
         
@@ -81,7 +80,6 @@ namespace MainScene.Player
             rigidbody2D.gravityScale = 0;
 
             hpSlider = GameObject.Find("PlayerHP").GetComponent<Slider>();
-            // InitializeRigidbody2D();
         }
 
         /// <summary>
@@ -99,16 +97,31 @@ namespace MainScene.Player
         /// <param name="direction">Use to verify direction</param>
         public void Move(Direction direction)
         {
+            if (CurrentState == State.Die)
+            {
+                return;
+            }
+
             int dir = 0;
             switch (direction)
             {
                 case Direction.Left:
                     dir = 1;
-                    // MoveLeft();
+                    animator.SetBool(IDLE, false);
+                    animator.SetBool(LEFT, true);
+                    animator.SetBool(RIGHT, false);
                     break;
                 case Direction.Right:
                     dir = -1;
-                    // MoveRight();
+                    animator.SetBool(IDLE, false);
+                    animator.SetBool(LEFT, false);
+                    animator.SetBool(RIGHT, true);
+                    break;
+                case Direction.None:
+                    CurrentState = State.Idle;
+                    animator.SetBool(IDLE, true);
+                    animator.SetBool(LEFT, false);
+                    animator.SetBool(RIGHT, false);
                     break;
             }
             MoveTo(dir);
@@ -122,16 +135,22 @@ namespace MainScene.Player
         {
             if (CurrentState == State.Move || CurrentState == State.Idle)
             {
-                Hp -= damage;
-                hpSlider.value = Hp * 0.01f;
-                if (Hp > 0)
-                {
-                    Avoid(AvoidTime);
-                }
-                else
-                {
-                    Die();
-                }
+                
+            }
+            if (CurrentState != State.Damage && CurrentState != State.Die)
+            {
+
+            }
+
+            Hp -= damage;
+            hpSlider.value = Hp * 0.01f;
+            if (Hp > 0)
+            {
+                Avoid(AvoidTime);
+            }
+            else
+            {
+                Die();
             }
         }
 
@@ -151,26 +170,17 @@ namespace MainScene.Player
         public void Die()
         {
             CurrentState = State.Die;
-            // make die
             StopAllCoroutines();
         }
 
         private Transform SetParentTransform()
         {
             Debug.Log("Exception occured. Instantiates new parent object.");
-            GameObject parentObj = new GameObject("Player");
+            GameObject parentObj = new GameObject(Struct.Tags.PLAYER);
             Transform parentTransform = parentObj.GetComponent<Transform>();
             transform.SetParent(parentTransform);
             return parentTransform;
         }
-
-        /*
-        private void InitializeRigidbody2D()
-        {
-            myRigidbody2D.simulated = true;
-            myRigidbody2D.gravityScale = 0;
-        }
-        */
 
         private void MoveTo(int direction)
         {

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletSpawnTest : MonoBehaviour
 {
-    public GameObject bullet;
-    public float delayTime = 1.0f;
+    public GameObject[] bullets;
+    public float delayTime = 0.5f;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class BulletSpawnTest : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(bullet, transform.position, transform.rotation);
+            Instantiate(bullets[Random.Range(0, 2)], transform.position, transform.rotation);
             yield return new WaitForSeconds(delayTime);
         }
     }

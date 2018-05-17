@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Bullet\Star.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Exception\InvalidClassException.cs" />
+    <Compile Include="Assets\Scripts\Manager\BulletManager.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager\Manager.cs" />
     <Compile Include="Assets\Scripts\Manager\SceneManager.cs" />

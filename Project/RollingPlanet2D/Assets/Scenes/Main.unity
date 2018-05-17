@@ -1377,7 +1377,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 871021339}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2901,7 +2901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb96f1c3e0fa2554fb46e8d557067cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1839169689655220, guid: 990ef544d2304e746938dc6130693eac, type: 2}
+  bullets:
+  - {fileID: 1081108827646522, guid: 160d17bb08e5ab14da7da2a1b774fbd4, type: 2}
+  - {fileID: 1588700933987828, guid: 847208946acb2564aa731768ef6d2cfe, type: 2}
   delayTime: 1
 --- !u!1 &1781371630
 GameObject:
