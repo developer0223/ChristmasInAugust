@@ -31,17 +31,17 @@ namespace MainScene.Bullet
             rigidbody2D.simulated = true;
             rigidbody2D.gravityScale = 0;
 
-            targetObject = GameObject.FindGameObjectWithTag(Struct.Tags.PLANET);
+            targetObject = GameObject.FindGameObjectWithTag(Data.Tags.PLANET);
             direction = targetObject.transform.position - transform.position;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag(Struct.Tags.PLANET))
+            if (collision.CompareTag(Data.Tags.PLANET))
             {
                 Destroy(gameObject);
             }
-            else if (collision.CompareTag(Struct.Tags.PLAYER))   
+            else if (collision.CompareTag(Data.Tags.PLAYER))   
             {
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<SnowMan>().Damage(Damage);

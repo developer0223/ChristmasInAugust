@@ -176,7 +176,7 @@ namespace MainScene.Player
         private Transform SetParentTransform()
         {
             Debug.Log("Exception occured. Instantiates new parent object.");
-            GameObject parentObj = new GameObject(Struct.Tags.PLAYER);
+            GameObject parentObj = new GameObject(Data.Tags.PLAYER);
             Transform parentTransform = parentObj.GetComponent<Transform>();
             transform.SetParent(parentTransform);
             return parentTransform;

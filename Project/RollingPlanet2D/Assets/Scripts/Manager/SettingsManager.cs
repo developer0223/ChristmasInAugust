@@ -51,11 +51,11 @@ namespace Manager
 
         public void Save(bool muteBGM, bool muteEffect)
         {
-            Struct.ModifyData data = new Struct.ModifyData();
+            Data.ModifyData data = new Data.ModifyData();
             data.muteBGM = muteBGM;
             data.muteEffect = muteEffect;
 
-            List<Struct.ModifyData> list = new List<Struct.ModifyData>();
+            List<Data.ModifyData> list = new List<Data.ModifyData>();
             list.Add(data);
 
             JsonData jsonData = JsonMapper.ToJson(list);
