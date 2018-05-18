@@ -52,8 +52,8 @@ namespace Manager
         public void Save(bool muteBGM, bool muteEffect)
         {
             Data.ModifyData data = new Data.ModifyData();
-            data.muteBGM = muteBGM;
-            data.muteEffect = muteEffect;
+            data.MuteBGM = muteBGM;
+            data.MuteEffect = muteEffect;
 
             List<Data.ModifyData> list = new List<Data.ModifyData>();
             list.Add(data);

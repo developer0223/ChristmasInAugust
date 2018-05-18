@@ -4,11 +4,10 @@ namespace Utility
 {
     public class Data
     {
-
         public struct ModifyData
         {
-            public static bool MuteBGM { get; set; }
-            public static bool MuteEffect { get; set; }
+            public bool MuteBGM { get; set; }
+            public bool MuteEffect { get; set; }
         }
 
         public struct Score
