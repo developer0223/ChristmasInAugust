@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Utility;
 using UnityEngine;
+using System.Collections;
 
 public class BulletSpawnTest : MonoBehaviour
 {
     public GameObject[] bullets;
-    public float delayTime = 0.5f;
+    private float delayTime = 0.2f;
 
     void Start()
     {
@@ -16,7 +16,8 @@ public class BulletSpawnTest : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(bullets[Random.Range(0, 2)], transform.position, transform.rotation);
+            Instantiate(bullets[Random.Range(0, bullets.Length)], transform.position, transform.rotation);
+            yield return new WaitForEndOfFrame();
             yield return new WaitForSeconds(delayTime);
         }
     }

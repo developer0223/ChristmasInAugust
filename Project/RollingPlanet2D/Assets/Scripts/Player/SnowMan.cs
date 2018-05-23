@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MainScene.Player
+namespace Player
 {
     public sealed class SnowMan : Player
     {

@@ -1,13 +1,13 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace MainScene.Bullet
+namespace Bullet
 {
     public class Bell : SpeedyBullet {
 
-        void Start()
+        private void Start()
         {
-            rigidbody2D.AddForce(direction * Speed * Time.deltaTime);
+            Speed = 10000;
+            rigidbody2D.AddForce(direction.normalized * Speed * Time.deltaTime);
         }
     }
 }

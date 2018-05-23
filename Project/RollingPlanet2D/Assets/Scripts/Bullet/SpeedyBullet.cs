@@ -1,8 +1,8 @@
 ﻿using Utility;
 using UnityEngine;
-using MainScene.Player;
+using Player;
 
-namespace MainScene.Bullet
+namespace Bullet
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(BoxCollider2D))]

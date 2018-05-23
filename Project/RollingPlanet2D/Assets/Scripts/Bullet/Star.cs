@@ -1,4 +1,4 @@
-﻿namespace MainScene.Bullet
+﻿namespace Bullet
 {
     public class Star : SpeedyBullet
     {
