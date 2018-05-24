@@ -12,20 +12,6 @@ namespace Manager
 
         private delegate void EmptyDel();
 
-        new private Transform transform;
-
-        private void Awake()
-        {
-            transform = GetComponent<Transform>();
-            DontDestroyOnLoad(transform);
-        }
-        /*
-            try // GetOrCreateManager
-            {
-            }
-            catch (ComponentNotExistException e) { Debug.Log(e); }
-        */
-
         private void Start()
         {
             // SceneManager sceneManager = GetOrCreateManager<SceneManager>();

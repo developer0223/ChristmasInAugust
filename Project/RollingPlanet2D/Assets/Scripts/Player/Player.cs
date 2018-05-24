@@ -22,7 +22,7 @@ namespace Player
         new protected Rigidbody2D rigidbody2D;
         protected Transform parentTransform;
         protected Animator animator;
-        protected Slider hpSlider;
+        protected Image hpBar;
         #endregion
 
         #region Enum
@@ -79,7 +79,7 @@ namespace Player
             rigidbody2D.simulated = true;
             rigidbody2D.gravityScale = 0;
 
-            hpSlider = GameObject.Find("PlayerHP").GetComponent<Slider>();
+            hpBar = GameObject.Find("HpBarFill").GetComponent<Image>();
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Player
             }
 
             Hp -= damage;
-            hpSlider.value = Hp * 0.01f;
+            hpBar.fillAmount = Hp * 0.01f;
             if (Hp > 0)
             {
                 Avoid(AvoidTime);
@@ -171,6 +171,8 @@ namespace Player
         {
             CurrentState = State.Die;
             StopAllCoroutines();
+            Time.timeScale = 0;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Restart");
         }
 
         private Transform SetParentTransform()

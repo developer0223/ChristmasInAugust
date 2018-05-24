@@ -9,6 +9,11 @@ namespace Manager
         public static readonly string LobbyScene = "Lobby";
         public static readonly string MainScene = "Main";
 
+        public void Load(string sceneName)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        }
+
         /// <summary>
         /// Load unity scene with sceneName, fadeOutTime, fadeInTime.
         /// </summary>

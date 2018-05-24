@@ -1,5 +1,6 @@
 ﻿using Utility;
 using UnityEngine;
+using Manager;
 using Player;
 
 namespace Bullet
@@ -21,7 +22,12 @@ namespace Bullet
         #region Variables
         protected GameObject targetObject;
         protected Vector2 direction;
+        protected string hotBulletParticle = "HotBulletParticle";
+        protected string iceBulletParticle = "IceBulletParticle";
         #endregion
+
+        // public
+        public GameObject particle;
 
         void Awake()
         {
@@ -39,13 +45,21 @@ namespace Bullet
         {
             if (collision.CompareTag(Data.Tags.PLANET))
             {
+                ShowParticle();
                 Destroy(gameObject);
+                Data.Score.Total += 2;
             }
             else if (collision.CompareTag(Data.Tags.PLAYER))   
             {
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<SnowMan>().Damage(Damage);
             }
+        }
+
+        public void ShowParticle()
+        {
+            GameObject particle = Instantiate(this.particle, transform.position, Quaternion.identity);
+            Destroy(particle, 1.0f);    
         }
     }
 }

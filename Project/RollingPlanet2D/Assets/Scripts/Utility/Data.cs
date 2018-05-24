@@ -12,8 +12,10 @@ namespace Utility
 
         public struct Score
         {
-            public static int Star { get; set; } = 0;
-            public static int Item { get; set; } = 0;
+            public static int Total { get; set; } = 0;
+            // public static int Item { get; set; } = 0;
+            // public static int Star { get; set; } = 0;
+            // public static int Destroy { get; set; } = 0;
         }
 
         public struct Tags

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Manager
+namespace Manager.Main
 {
     public class UIManager : Manager
     {

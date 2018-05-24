@@ -1,0 +1,2 @@
+F:\GitHub\RollingPlanet2D\Project\RollingPlanet2D\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+F:\GitHub\RollingPlanet2D\Project\RollingPlanet2D\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
