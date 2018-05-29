@@ -170,6 +170,6 @@ MonoBehaviour:
   bullets:
   - {fileID: 1081108827646522, guid: 160d17bb08e5ab14da7da2a1b774fbd4, type: 2}
   - {fileID: 1588700933987828, guid: 847208946acb2564aa731768ef6d2cfe, type: 2}
-  - {fileID: 1229971887390014, guid: d1bfb731bce0bfc43aa2b75289ec3623, type: 2}
   - {fileID: 1271492477330050, guid: 1e2ad37d3e29d2f49bad70a5ff9085ae, type: 2}
+  - {fileID: 1229971887390014, guid: d1bfb731bce0bfc43aa2b75289ec3623, type: 2}
   rotateSpeed: 20

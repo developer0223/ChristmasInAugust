@@ -1,4 +1,5 @@
 ﻿using Player;
+using Manager;
 using Utility;
 using UnityEngine;
 
@@ -26,8 +27,8 @@ namespace Bullet
             if (collision.CompareTag(Data.Tags.PLAYER) ||
                 collision.CompareTag(Data.Tags.CLOUD))
             {
-                // audioSource.PlayOneShot(audioClip);
                 AddScore();
+                gameManager.GetOrCreateManager<SoundManager>().Play(destroySound, transform.position);
                 Destroy(gameObject);
             }
         }
@@ -37,10 +38,10 @@ namespace Bullet
             switch (gameObject.name)
             {
                 // todo : 상속구조로 변경하기
-                case "SilverStar(Clone)":
+                case "SilverSnow(Clone)":
                     Data.Score.Snow += 3;
                     break;
-                case "PinkStar(Clone)":
+                case "PinkSnow(Clone)":
                     Data.Score.Snow += 4;
                     break;
                 default:

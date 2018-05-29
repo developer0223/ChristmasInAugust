@@ -1,9 +1,9 @@
 ﻿using Utility;
+using Manager;
 using UnityEngine;
 
 namespace Bullet
 {
-    [RequireComponent(typeof(AudioSource))]
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(BoxCollider2D))]
     public class SpeedyBullet : Bullet
@@ -20,8 +20,9 @@ namespace Bullet
         #endregion
 
         #region Variables
-        public AudioClip audioClip;
+        // public AudioClip audioClip;
 
+        protected GameManager gameManager;
         protected GameObject targetObject;
         protected Vector2 direction;
         protected string hotBulletParticle = "HotBulletParticle";
@@ -29,11 +30,13 @@ namespace Bullet
         #endregion
 
         public GameObject particle;
+        public AudioClip destroySound;
 
         void Awake()
         {
             transform = GetComponent<Transform>();
             audioSource = GetComponent<AudioSource>();
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
             rigidbody2D = GetComponent<Rigidbody2D>();
             rigidbody2D.simulated = true;
@@ -45,8 +48,8 @@ namespace Bullet
 
         public void ShowParticle()
         {
-            GameObject particle = Instantiate(this.particle, transform.position, Quaternion.identity);
-            Destroy(particle, 1.0f);
+            ParticleManager manager = gameManager.GetOrCreateManager<ParticleManager>();
+            manager.Show(particle, transform.position, 2.0f); //  + - new Vector3(direction.x, direction.y, 0)
         }
 
         protected void DestroyThis()

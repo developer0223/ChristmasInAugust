@@ -63,10 +63,10 @@ namespace Enemy
                 case Bullet.GrumpyBullet:
                     obj = bullets[1];
                     break;
-                case Bullet.YellowStar:
+                case Bullet.SilverStar:
                     obj = bullets[2];
                     break;
-                case Bullet.SilverStar:
+                case Bullet.YellowStar:
                     obj = bullets[3];
                     break;
                 case Bullet.Random:

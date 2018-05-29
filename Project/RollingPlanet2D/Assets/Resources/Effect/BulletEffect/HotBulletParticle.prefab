@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4945657432010990}
   - component: {fileID: 198729494349813256}
   - component: {fileID: 199013676955392712}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HotBulletParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629888290061918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0.91, y: 3.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,7 +48,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629888290061918}
   serializedVersion: 5
-  lengthInSec: 1.25
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -227,7 +227,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 0.014705896, b: 0.014705896, a: 1}
-      maxColor: {r: 1, g: 0.43901384, b: 0.43901384, a: 1}
+      maxColor: {r: 0.8235294, g: 0.3148789, b: 0.3148789, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -289,7 +289,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.33
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2

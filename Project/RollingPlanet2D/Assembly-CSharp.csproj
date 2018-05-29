@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Manager\InputManager.cs" />
     <Compile Include="Assets\Scripts\Manager\ItemManager.cs" />
     <Compile Include="Assets\Scripts\Manager\Manager.cs" />
+    <Compile Include="Assets\Scripts\Manager\ParticleManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SceneManager.cs" />
     <Compile Include="Assets\Scripts\Manager\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SettingsManager.cs" />

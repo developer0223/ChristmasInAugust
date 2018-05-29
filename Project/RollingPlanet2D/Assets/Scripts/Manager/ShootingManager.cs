@@ -8,7 +8,7 @@ namespace Manager
     public class ShootingManager : Manager
     {
         RandomTurret randomTurret;
-        
+
         RotateTurret silverTurret;
         RotateTurret pinkTurret;
         RotateTurret angryTurret;
@@ -52,40 +52,13 @@ namespace Manager
 
         void StartShooting()
         {
-            StartCoroutine(MixSnow());
-            StartCoroutine(SilverSnow());
-            StartCoroutine(YellowSnow());
-            StartCoroutine(AngryBullet());
-            StartCoroutine(GrumpyBullet());
-        }
-
-        private IEnumerator SilverSnow()
-        {
-            while (true)
-            {
-                silverTurret.Shoot(3.0f, Turret.Bullet.SilverStar);
-                yield return new WaitForSeconds(silverStarDelayTime);
-            }
-        }
-
-        private IEnumerator YellowSnow()
-        {
-            while (true)
-            {
-                pinkTurret.Shoot(3.0f, Turret.Bullet.YellowStar);
-                yield return new WaitForSeconds(pinkStarDelayTime);
-            }
-        }
-
-        private IEnumerator MixSnow()
-        {
-            while (true)
-            {
-                silverTurret.Shoot(3.0f, Turret.Bullet.SilverStar);
-                yield return new WaitForSeconds(0.25f);
-                pinkTurret.Shoot(3.0f, Turret.Bullet.YellowStar);
-                yield return new WaitForSeconds(mixStarDelayTime);
-            }
+            StartCoroutine(Angry);
+            /*
+            StartCoroutine(Grumpy);
+            StartCoroutine(Yellow);
+            StartCoroutine(Silver);
+            StartCoroutine(Mix);
+            */
         }
 
         private IEnumerator AngryBullet()
@@ -143,5 +116,36 @@ namespace Manager
                 yield return new WaitForSeconds(Random.Range(1, 3));
             }
         }
+
+        private IEnumerator YellowSnow()
+        {
+            while (true)
+            {
+                pinkTurret.Shoot(3.0f, Turret.Bullet.YellowStar);
+                yield return new WaitForSeconds(pinkStarDelayTime);
+            }
+        }
+
+        private IEnumerator SilverSnow()
+        {
+            while (true)
+            {
+                silverTurret.Shoot(3.0f, Turret.Bullet.SilverStar);
+                yield return new WaitForSeconds(silverStarDelayTime);
+            }
+        }
+
+        private IEnumerator MixSnow()
+        {
+            while (true)
+            {
+                silverTurret.Shoot(3.0f, Turret.Bullet.SilverStar);
+                yield return new WaitForSeconds(0.25f);
+                pinkTurret.Shoot(3.0f, Turret.Bullet.YellowStar);
+                yield return new WaitForSeconds(mixStarDelayTime);
+            }
+        }
+
+
     }
 }
