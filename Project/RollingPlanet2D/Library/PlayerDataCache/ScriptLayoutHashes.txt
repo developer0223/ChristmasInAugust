@@ -2,9 +2,9 @@ Android
 PlayerPath?
 F:/GitHub/RollingPlanet2D/Project/RollingPlanet2D/Builds/T3.apk
 SceneListBegin?
-Assets/Scenes/Lobby.unity
-Assets/Scenes/Main.unity
-Assets/Scenes/Restart.unity
+Assets/Scenes/Release/Lobby.unity
+Assets/Scenes/Release/Main.unity
+Assets/Scenes/Release/Restart.unity
 SceneListEnd?
 8c8e424198240cd5381e7765a781213f Assembly-CSharp-firstpass.dll:.UIButtonMessage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.MainThreadDispatcher
@@ -123,6 +123,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 30afa8783a8bbee2e465ec9ce1efaee2 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 607d64d2c4bc76ac9876e6f7b9cc7edf UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 2948a0331d5bc18098e0bd0a2391d525 Assembly-CSharp-firstpass.dll:.UIScrollView
+5cd33b67a7a271b7183c404896e3a523 Assembly-CSharp.dll:.CircleSpawn
 b09f06ecfa4f8ab98ff831750612cd6d Assembly-CSharp-firstpass.dll:.UIPlayTween
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -166,6 +167,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Manager.GameManager
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Manager.ParticleManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservablePointerExitTrigger
 9feb1f3dc2a968464d3acac927a922a4 Assembly-CSharp-firstpass.dll:.TweenPosition
 e7ced6492e9c57ea2d06cc2694771449 Assembly-CSharp-firstpass.dll:.LoadLevelOnClick
@@ -179,6 +181,7 @@ b2b7fe871a51c58a929bd270b5fb0041 Assembly-CSharp-firstpass.dll:.UIPlayAnimation
 ef09686cacab03d94a8cc14711428c6b Assembly-CSharp-firstpass.dll:.DownloadTexture
 0ed5bc3d58c26257dfd7c50b3fcaafb7 Assembly-CSharp-firstpass.dll:.UICenterOnChild
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableEventTrigger
+a678457da343bc47a51473014cf2b6ff Assembly-CSharp.dll:Enemy.ThickTurret
 136c2a49bb0374d3a30c982b57b1deb1 Assembly-CSharp-firstpass.dll:.UIRoot
 46409ae3731c3c22da8052a51565f6b2 Assembly-CSharp-firstpass.dll:.UISavedOption
 164454e518fd4e83d07fd0f7ffecc164 Assembly-CSharp-firstpass.dll:.UIAnchor
@@ -189,7 +192,7 @@ d17ecbd7113facfe3f120c1e80e08d34 Assembly-CSharp-firstpass.dll:.UIEquipmentSlot
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableEnableTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Manager.ShootingManager
 22810f2407bdc7146e09301c30712667 Assembly-CSharp-firstpass.dll:.LagRotation
-c4ec4e16af64b658c85ec7c46fd05d32 Assembly-CSharp.dll:Bullet.Cloud
+2a641d9ac5ee28cf78b6e0242a79c0fb Assembly-CSharp.dll:Bullet.Cloud
 f21e4a5508bd9928857459c9f6868cbb Assembly-CSharp-firstpass.dll:.TweenLetters
 7c959e682a5fe1e6a8e6b6e535936fc9 Assembly-CSharp.dll:Manager.Main.UIManager
 e260464741984401792c21e9f1b18f52 Assembly-CSharp-firstpass.dll:.UIToggle
@@ -204,16 +207,18 @@ ac4b8da881863d2cabf10e05b6e01c0a Assembly-CSharp-firstpass.dll:.UIEventTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Manager.SettingsManager
 5ee6b3a9ddfd1b34a29e37bff36c7883 Assembly-CSharp-firstpass.dll:.InvAttachmentPoint
 cbe311702101a8fd2b4fe90072451a87 Assembly-CSharp-firstpass.dll:.UIShowControlScheme
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Manager.CoroutineRefManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.UIWidgetContainer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableTriggerTrigger
 7a616dbce92f73c40a3ca496077d8b39 Assembly-CSharp-firstpass.dll:.ChatInput
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ItemManager
 e83a9e5a848f2a14d2ba02d4208df41c Assembly-CSharp-firstpass.dll:.UITooltip
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Manager.SceneManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableCollisionTrigger
-c4ec4e16af64b658c85ec7c46fd05d32 Assembly-CSharp.dll:Bullet.SpeedyBullet
+2a641d9ac5ee28cf78b6e0242a79c0fb Assembly-CSharp.dll:Bullet.SpeedyBullet
 d416213fcbdab9c579b1328ce6f00d1a Assembly-CSharp-firstpass.dll:.UIInput
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableTrigger2DTrigger
-c4ec4e16af64b658c85ec7c46fd05d32 Assembly-CSharp.dll:Bullet.Bell
+2a641d9ac5ee28cf78b6e0242a79c0fb Assembly-CSharp.dll:Bullet.Bell
 8b9f05e49e19b6f3202c3e211aaeb09b Assembly-CSharp.dll:Test.UniRxTest
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableParticleTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Examples.Sample09_EventHandling
@@ -235,7 +240,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-c4ec4e16af64b658c85ec7c46fd05d32 Assembly-CSharp.dll:Bullet.Star
+2a641d9ac5ee28cf78b6e0242a79c0fb Assembly-CSharp.dll:Bullet.Star
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableInitializePotentialDragTrigger
 d146d3d8148b2f35a8c7980d63a88f0e Assembly-CSharp-firstpass.dll:.UICursor
 2a026ea4234d4b6565ba533c90e5a2f8 Assembly-CSharp-firstpass.dll:.TweenRotation
@@ -252,7 +257,7 @@ dc7c79d279c7db671b5343c1c88ec717 Assembly-CSharp-firstpass.dll:.AnimatedColor
 f02726adeff0a3ec5905565234b372da UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.OpenURLOnClick
-9b3ee5300340ee362f403d0fcd14135e Assembly-CSharp.dll:Manager.Lobby.UIManager
+85e76c9471d3b45b24b69d7f449e1aa4 Assembly-CSharp.dll:Manager.Lobby.UIManager
 9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -281,7 +286,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 b533a55bac6b0ef81fc95d63b2d4c3a9 Assembly-CSharp-firstpass.dll:.UIButtonRotation
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservablePointerEnterTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Player.Player
-a678457da343bc47a51473014cf2b6ff Assembly-CSharp.dll:Enemy.Turret
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Triggers.ObservableFixedUpdateTrigger
 b7eb86aae1e536bd0ed95c3ef6abf7ab Assembly-CSharp-firstpass.dll:.UIWrapContent
 b533a55bac6b0ef81fc95d63b2d4c3a9 Assembly-CSharp-firstpass.dll:.UIButtonOffset
@@ -334,5 +338,5 @@ e7ae6e9ee8a8a6b2d7860a7212a8416e Assembly-CSharp-firstpass.dll:.EquipRandomItem
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Examples.Sample06_ConvertToCoroutine
 fcffe9bbf1b7b7e4593e31031f78987b Assembly-CSharp-firstpass.dll:.UISliderColors
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UniRx.Examples.Sample08_DetectDoubleClick
-b75b5fc9955d7ee3ec9e94e808b2a2ad Assembly-CSharp.dll:Manager.Restart.UIManager
+c17fe721d21952742e3f60c6996613e6 Assembly-CSharp.dll:Manager.Restart.UIManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.RealTime

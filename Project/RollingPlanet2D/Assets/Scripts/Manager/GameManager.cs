@@ -21,12 +21,14 @@ namespace Manager
         private GameObject cloud;
         private Image cloudImage;
         private bool isCloudDisplaying = false;
-        private float cloudDisplayTime = 3.0f;
-        private float cloudFadeOutTime = 1.0f;
+        private const float cloudDisplayTime = 3.0f;
+        private const float cloudFadeOutTime = 1.0f;
 
         private void Start()
         {
             Data.Score.Total = 0;
+            Data.Score.Snow = 0;
+            Data.Score.Avoid = 0;
 
             effectManager = GetOrCreateManager<EffectManager>();
             blackWall = FindComponent<Image>("BlackWall");
