@@ -11,11 +11,13 @@ namespace Enemy
         protected GameObject currentBullet;
         protected float radius = 20.0f;
 
+        protected IEnumerator EShootCoroutine;
+
         public enum Bullet
         {
             AngryBullet,
             GrumpyBullet,
-            PinkStar,
+            YellowStar,
             SilverStar,
             Random
         }
@@ -61,7 +63,7 @@ namespace Enemy
                 case Bullet.GrumpyBullet:
                     obj = bullets[1];
                     break;
-                case Bullet.PinkStar:
+                case Bullet.YellowStar:
                     obj = bullets[2];
                     break;
                 case Bullet.SilverStar:

@@ -8,7 +8,7 @@ namespace Enemy
     {
         private void Start()
         {
-            Shoot(0, 360, 3.0f, Bullet.PinkStar);
+            Shoot(0, 360, 3.0f, Bullet.SilverStar);
         }
 
         public void Shoot(int startDegree, int endDegree, float playTime, Bullet bullet)

@@ -11,6 +11,16 @@ namespace Manager
         private const float start = 0.0f;
         private const float end = 1.0f;
 
+        public void FadeIn(Text text, float playTime)
+        {
+            StartCoroutine(ETextFadeIn(text, playTime));
+        }
+
+        public void FadeOut(Text text, float playTime)
+        {
+            StartCoroutine(ETextFadeOut(text, playTime));
+        }
+
         public void FadeIn(Image image, float playTime)
         {
             StartCoroutine(EFadeIn(image, playTime, x => { }));
@@ -29,6 +39,36 @@ namespace Manager
         public void FadeOut(Image image, float playTime, Action<object> callback)
         {
             StartCoroutine(EFadeOut(image, playTime, x => callback(x)));
+        }
+
+        private IEnumerator ETextFadeIn(Text text, float playTime)
+        {
+            Color color = text.color;
+            float time = start;
+            while (color.a < end)
+            {
+                time += Time.deltaTime / playTime;
+                color.a = Mathf.Lerp(start, end, time);
+                text.color = color;
+                yield return null;
+            }
+            color.a = 1;
+            text.color = color;
+        }
+
+        private IEnumerator ETextFadeOut(Text text, float playTime)
+        {
+            Color color = text.color;
+            float time = start;
+            while (color.a > start)
+            {
+                time += Time.deltaTime / playTime;
+                color.a = Mathf.Lerp(end, start, time);
+                text.color = color;
+                yield return null;
+            }
+            color.a = 0;
+            text.color = color;
         }
 
         private IEnumerator EFadeIn(Image image, float playTime, Action<object> fadeIn)

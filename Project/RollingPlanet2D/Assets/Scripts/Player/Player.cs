@@ -199,6 +199,8 @@ namespace Player
         public void Die()
         {
             CurrentState = State.Die;
+
+            gameManager.GetOrCreateManager<ScoreManager>().IsAlive = false;
             gameManager.GetOrCreateManager<ScoreManager>().RenewalScore();
             StopAllCoroutines();
             gameManager.GetOrCreateManager<EffectManager>().FadeIn(GameObject.Find("BlackWall").GetComponent<Image>(), 2.0f, (x) =>

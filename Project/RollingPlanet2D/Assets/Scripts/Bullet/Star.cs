@@ -38,10 +38,10 @@ namespace Bullet
             {
                 // todo : 상속구조로 변경하기
                 case "SilverStar(Clone)":
-                    Data.Score.Total += 3;
+                    Data.Score.Snow += 3;
                     break;
                 case "PinkStar(Clone)":
-                    Data.Score.Total += 4;
+                    Data.Score.Snow += 4;
                     break;
                 default:
                     Debug.Log($"diffferent tag : {gameObject.name}");

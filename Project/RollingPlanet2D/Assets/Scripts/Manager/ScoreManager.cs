@@ -11,6 +11,8 @@ namespace Manager
         private Text scoreText;
         private Text bestScoreText;
 
+        public bool IsAlive { get; set; }
+
         private void Awake()
         {
             scoreText = FindComponent<Text>("ScoreText");
@@ -19,12 +21,17 @@ namespace Manager
 
         private void Start()
         {
+            IsAlive = true;
             RefreshBestScore();
         }
 
         private void Update()
         {
-            scoreText.text = Data.Score.Total.ToString();
+            if (IsAlive)
+            {
+                Data.Score.Total = Data.Score.Snow + Data.Score.Avoid;
+                scoreText.text = Data.Score.Total.ToString();
+            }
         }
 
         public void RenewalScore()

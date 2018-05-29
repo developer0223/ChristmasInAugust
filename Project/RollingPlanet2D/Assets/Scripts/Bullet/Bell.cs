@@ -36,10 +36,10 @@ namespace Bullet
             {
                 // todo : 상속구조로 변경하기
                 case "AngryBullet(Clone)":
-                    Data.Score.Total += 1;
+                    Data.Score.Avoid += 1;
                     break;
                 case "GrumpyBullet(Clone)":
-                    Data.Score.Total += 2;
+                    Data.Score.Avoid += 2;
                     break;
                 default:
                     Debug.Log($"diffferent tag : {gameObject.name}");
