@@ -1,4 +1,5 @@
 ﻿using UniRx;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -7,8 +8,13 @@ namespace Manager.Lobby
 {
     public class UIManager : Manager
     {
-        [SerializeField] private Image playButton;
-        [SerializeField] private Image playText;
+        public Image playButton;
+        public Image playText;
+        public Image tutorialButton;
+        public Canvas toturialPopUp;
+        public Image blackWall;
+
+        private bool isPopUpDisplaying = false;
 
         private const float fadeInTime = 2.0f;
         private const float delayTime = 1.0f;
@@ -29,19 +35,39 @@ namespace Manager.Lobby
         private IEnumerator StartFadeIn()
         {
             yield return new WaitForSeconds(delayTime);
-            effectManager.FadeIn(playText, fadeInTime,(x) => Debug.Log("Lobby.PlayText fadeIn complete."));
-            yield return new WaitForSeconds(delayTime);
+            effectManager.FadeIn(playText, fadeInTime, (x) => Debug.Log("Lobby.PlayText fadeIn complete."));
+            yield return new WaitForSeconds(1.0f);
             effectManager.FadeIn(playButton, fadeInTime, (x) => Debug.Log("Lobby.PlayButton fadeIn complete."));
+            yield return new WaitForSeconds(1.0f);
+            effectManager.FadeIn(tutorialButton, fadeInTime, (x) => DoNothing());
+            yield return null;
         }
 
         private void SetOnClickListener()
         {
-            Button button = playButton.gameObject.GetComponent<Button>();
-            button.onClick
+            Button playBtn = playButton.gameObject.GetComponent<Button>();
+            playBtn.onClick
                 .AsObservable()
-                .Subscribe(_ =>
-                   UnityEngine.SceneManagement.SceneManager.LoadScene("Main")
-                );
+                .Subscribe(
+                _ =>
+                {
+                    effectManager.FadeIn(blackWall, fadeInTime, (x) =>
+                    {
+                        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+                    });
+                });
+
+            Button tutorialBtn = tutorialButton.gameObject.GetComponent<Button>();
+            tutorialBtn.onClick
+                .AsObservable()
+                .Subscribe(
+                x =>
+                {
+                    isPopUpDisplaying = !isPopUpDisplaying;
+                    toturialPopUp.gameObject.SetActive(isPopUpDisplaying);
+                    
+                });
         }
+
     }
 }

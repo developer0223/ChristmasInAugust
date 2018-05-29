@@ -15,7 +15,7 @@ namespace Manager
             clipManager = GetComponent<AudioSource>();
             clipManager.playOnAwake = false;
 
-            age_of_war = Resources.Load($"{BGM_PATH}age_of_war") as AudioClip;
+            age_of_war = Resources.Load($"{BGM_PATH}MapleStory") as AudioClip;
         }
 
         private void Start()

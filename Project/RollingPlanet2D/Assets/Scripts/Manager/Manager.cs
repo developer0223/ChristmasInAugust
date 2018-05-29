@@ -28,9 +28,14 @@ namespace Manager
         /// <typeparam name="T"></typeparam>
         /// <param name="objectName"></param>
         /// <returns></returns>
-        protected T FindComponent<T>(string objectName)
+        protected T FindComponent<T>(string objectName) where T : Component
         {
             return GameObject.Find(objectName).GetComponent<T>();
+        }
+
+        protected void DoNothing()
+        {
+            // do nothing
         }
     }
 }

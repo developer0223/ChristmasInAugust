@@ -1,7 +1,6 @@
 ﻿using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Manager.Main
@@ -14,6 +13,8 @@ namespace Manager.Main
 
         private Button pausedButton;
         private List<Canvas> canvasList;
+
+        public Image blackWall;
 
         #region pause state
         private Canvas pauseCanvas;
@@ -35,6 +36,7 @@ namespace Manager.Main
             FindManager();
             FindCanvas();
             FindButton();
+            gameManager.FadeOut();
         }
 
         private void FindButton()

@@ -9,20 +9,41 @@ namespace Manager
     public class ScoreManager : Manager
     {
         private Text scoreText;
+        private Text bestScoreText;
 
         private void Awake()
         {
             scoreText = FindComponent<Text>("ScoreText");
+            bestScoreText = FindComponent<Text>("BestScoreText");
         }
 
         private void Start()
         {
-
+            RefreshBestScore();
         }
 
         private void Update()
         {
             scoreText.text = Data.Score.Total.ToString();
+        }
+
+        public void RenewalScore()
+        {
+            if (Data.Score.Total > PlayerPrefs.GetInt(Data.BestScore.PrefsName))
+            {
+                RenewalBestScore();
+            }
+        }
+
+        private void RenewalBestScore()
+        {
+            PlayerPrefs.SetInt(Data.BestScore.PrefsName, Data.Score.Total);
+            PlayerPrefs.Save();
+        }
+
+        public void RefreshBestScore()
+        {
+            bestScoreText.text = PlayerPrefs.GetInt(Data.BestScore.PrefsName).ToString();
         }
     }
 }

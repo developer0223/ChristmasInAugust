@@ -7,41 +7,55 @@ namespace Manager.Restart
 {
     public class UIManager : Manager
     {
-        [SerializeField] private Image playButton;
-        [SerializeField] private Image playText;
+        public Image restartButton;
+        public Image restartText;
+
+        public Image blackWall;
 
         private const float fadeInTime = 2.0f;
         private const float delayTime = 1.0f;
 
         private EffectManager effectManager;
 
-        private void Awake()
-        {
-            effectManager = GameObject.Find("GameManager").GetComponent<EffectManager>();
-        }
-
         private void Start()
         {
-            StartCoroutine(StartFadeIn());
+            Debug.Log("start");
+            StartCoroutine(FindAndStartFadeIn());
+        }
+
+        private IEnumerator FindAndStartFadeIn()
+        {
+            effectManager = FindComponent<EffectManager>("GameManager");
+            // GameObject.Find("GameManager").GetComponent<EffectManager>();
+            // restartText = FindComponent<Image>("DieMessage");
+            // restartButton = FindComponent<Image>("RestartButton");
+
             SetOnClickListener();
+            StartCoroutine(StartFadeIn());
+            yield return null;
         }
 
         private IEnumerator StartFadeIn()
         {
             yield return new WaitForSeconds(delayTime);
-            effectManager.FadeIn(playText, fadeInTime, (x) => Debug.Log("Restart.PlayText fadeIn complete."));
+            effectManager.FadeIn(restartText, fadeInTime);
             yield return new WaitForSeconds(delayTime);
-            effectManager.FadeIn(playButton, fadeInTime, (x) => Debug.Log("Restart.PlayButton fadeIn complete."));
+            effectManager.FadeIn(restartButton, fadeInTime);
         }
 
         private void SetOnClickListener()
         {
-            Button button = playButton.gameObject.GetComponent<Button>();
+            Button button = restartButton.gameObject.GetComponent<Button>();
             button.onClick
                 .AsObservable()
-                .Subscribe(_ =>
-                   UnityEngine.SceneManagement.SceneManager.LoadScene("Main")
-                );
+                .Subscribe(
+                _ =>
+                {
+                    effectManager.FadeOut(blackWall, fadeInTime, (x) =>
+                    {
+                        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+                    });
+                });
         }
     }
 }

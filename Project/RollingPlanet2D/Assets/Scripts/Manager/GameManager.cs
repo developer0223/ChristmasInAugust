@@ -1,7 +1,9 @@
 ﻿using UniRx;
+using Utility;
 using MyException;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace Manager
 {
@@ -12,10 +14,66 @@ namespace Manager
 
         private delegate void EmptyDel();
 
+        private EffectManager effectManager;
+        private Image blackWall;
+
+        private Button cloudButton;
+        private GameObject cloud;
+        private Image cloudImage;
+        private bool isCloudDisplaying = false;
+        private float cloudDisplayTime = 3.0f;
+        private float cloudFadeOutTime = 1.0f;
+
         private void Start()
         {
-            // SceneManager sceneManager = GetOrCreateManager<SceneManager>();
-            // StartCoroutine(sceneManager.FadeOut(3.0f, completed => { Debug.Log("Completed"); }));
+            Data.Score.Total = 0;
+
+            effectManager = GetOrCreateManager<EffectManager>();
+            blackWall = FindComponent<Image>("BlackWall");
+
+            InitCloud();
+        }
+
+        private void InitCloud()
+        {
+            cloud = GameObject.Find("Cloud");
+            cloudImage = FindComponent<Image>("Cloud");
+            Color color = cloudImage.color;
+            color.a = 0;
+            cloudImage.color = color;
+
+            cloudButton = FindComponent<Button>("CloudButton");
+            cloudButton.onClick
+                .AsObservable()
+                .Subscribe(
+                (x) =>
+                {
+                    MakeCloud();
+                });
+        }
+
+        public void MakeCloud()
+        {
+            if (!isCloudDisplaying)
+            {
+                StartCoroutine(EMakeCloud(cloudDisplayTime, cloudFadeOutTime));
+            }
+        }
+
+        private IEnumerator EMakeCloud(float displayTime, float fadeOutTime)
+        {
+            isCloudDisplaying = true;
+            Color color = cloudImage.color;
+            color.a = 1;
+            cloudImage.color = color;
+            cloud.GetComponent<BoxCollider2D>().enabled = true;
+            yield return new WaitForSeconds(displayTime);
+            effectManager.FadeOut(cloudImage, fadeOutTime / 2,
+                (x) =>
+                {
+                    isCloudDisplaying = false;
+                    cloud.GetComponent<BoxCollider2D>().enabled = false;
+                });
         }
 
         public void SetTimeScale(float scale)
@@ -27,6 +85,25 @@ namespace Manager
         public T GetManager<T>() where T : Manager
         {
             return GetOrCreateManager<T>();
+        }
+
+        public void FadeOut()
+        {
+            effectManager.FadeOut(blackWall, 2.0f, (x) =>
+            {
+                // do nothing
+            });
+        }
+
+        public void FadeIn()
+        {
+            Debug.Log("fadeIn");
+            effectManager.FadeIn(blackWall, 2.0f, (x) =>
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Restart");
+                Debug.Log("restart");
+            });
+            Debug.Log("fadein complete");
         }
     }
 }

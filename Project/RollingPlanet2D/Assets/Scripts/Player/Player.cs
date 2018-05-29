@@ -1,4 +1,5 @@
 ﻿using Utility;
+using Manager;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -11,10 +12,11 @@ namespace Player
     {
         #region Properties
         public int Hp { get; set; } = 100;
-        public float Speed { get; } = 60.0f;
-        public float AvoidTime { get; set; } = 1.0f;
+        public float Speed { get; } = 50.0f;
+        public float AvoidTime { get; set; } = 3.0f;
 
         private State CurrentState { get; set; }
+        private bool IsBlinking { get; set; } = false;
         #endregion
 
         #region Cashed Components
@@ -23,6 +25,8 @@ namespace Player
         protected Transform parentTransform;
         protected Animator animator;
         protected Image hpBar;
+        protected GameManager gameManager;
+        protected SpriteRenderer spriteRenderer;
         #endregion
 
         #region Enum
@@ -49,6 +53,19 @@ namespace Player
         private void Update()
         {
 #if UNITY_EDITOR
+            /*
+            Color color = spriteRenderer.color;
+            if (IsBlinking)
+            {
+                color.a = 0.2f;
+            }
+            else
+            {
+                color.a = 1f;
+            }
+            spriteRenderer.color = color;
+            */
+
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 Move(Direction.Left);
@@ -61,8 +78,12 @@ namespace Player
             {
                 Move(Direction.None);
             }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                gameManager.MakeCloud();
+            }
 #elif UNITY_ANDROID
-        
 #endif
         }
 
@@ -73,6 +94,7 @@ namespace Player
         {
             Debug.Log($"Initialize {name}'s components.");
             transform = GetComponent<Transform>();
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             parentTransform = (transform.parent ? transform.parent.GetComponent<Transform>() : SetParentTransform());
             animator = GetComponent<Animator>();
             rigidbody2D = GetComponent<Rigidbody2D>();
@@ -80,6 +102,7 @@ namespace Player
             rigidbody2D.gravityScale = 0;
 
             hpBar = GameObject.Find("HpBarFill").GetComponent<Image>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         /// <summary>
@@ -107,21 +130,24 @@ namespace Player
             {
                 case Direction.Left:
                     dir = 1;
-                    animator.SetBool(IDLE, false);
                     animator.SetBool(LEFT, true);
                     animator.SetBool(RIGHT, false);
+                    animator.SetBool(IDLE, false);
+                    // Debug.Log("Left");
                     break;
                 case Direction.Right:
                     dir = -1;
-                    animator.SetBool(IDLE, false);
                     animator.SetBool(LEFT, false);
                     animator.SetBool(RIGHT, true);
+                    animator.SetBool(IDLE, false);
+                    // Debug.Log("Right");
                     break;
                 case Direction.None:
                     CurrentState = State.Idle;
-                    animator.SetBool(IDLE, true);
                     animator.SetBool(LEFT, false);
                     animator.SetBool(RIGHT, false);
+                    animator.SetBool(IDLE, true);
+                    // Debug.Log("None");
                     break;
             }
             MoveTo(dir);
@@ -135,23 +161,23 @@ namespace Player
         {
             if (CurrentState == State.Move || CurrentState == State.Idle)
             {
-                
+                Hp -= damage;
+                hpBar.fillAmount = Hp * 0.01f;
+                if (Hp > 0)
+                {
+                    Avoid(AvoidTime);
+                }
+                else
+                {
+                    Die();
+                }
             }
-            if (CurrentState != State.Damage && CurrentState != State.Die)
+            /*
+            else if (CurrentState == State.Damage || CurrentState == State.Die)
             {
-
+                // do nothing
             }
-
-            Hp -= damage;
-            hpBar.fillAmount = Hp * 0.01f;
-            if (Hp > 0)
-            {
-                Avoid(AvoidTime);
-            }
-            else
-            {
-                Die();
-            }
+            */
         }
 
         /// <summary>
@@ -160,8 +186,11 @@ namespace Player
         /// <param name="avoidTime">avoidTime</param>
         public void Avoid(float time)
         {
-            CurrentState = State.Damage;
-            StartCoroutine(EAvoid(time));
+            if (CurrentState != State.Damage && CurrentState != State.Die)
+            {
+                CurrentState = State.Damage;
+                StartCoroutine(EAvoid(time));
+            }
         }
 
         /// <summary>
@@ -170,9 +199,12 @@ namespace Player
         public void Die()
         {
             CurrentState = State.Die;
+            gameManager.GetOrCreateManager<ScoreManager>().RenewalScore();
             StopAllCoroutines();
-            Time.timeScale = 0;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Restart");
+            gameManager.GetOrCreateManager<EffectManager>().FadeIn(GameObject.Find("BlackWall").GetComponent<Image>(), 2.0f, (x) =>
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Restart");
+            });
         }
 
         private Transform SetParentTransform()
@@ -190,10 +222,35 @@ namespace Player
             parentTransform.Rotate(0, 0, direction * Speed * Time.deltaTime, Space.Self);
         }
 
-        private IEnumerator EAvoid(float time)
+        private IEnumerator EAvoid(float avoidTime)
         {
             CurrentState = State.Damage;
-            yield return new WaitForSeconds(time);
+            /*
+            float currentTime = 0.0f;
+            Color color = spriteRenderer.color;
+            bool blink = false;
+
+            
+            Debug.Log("EAvoid start");
+            while (currentTime < avoidTime)
+            {
+                Debug.Log($"blink : {blink}");
+                if (blink)
+                {
+                    IsBlinking = false;
+                }
+                else
+                {
+                    IsBlinking = true;
+                }
+                spriteRenderer.color = color;
+                blink = !blink;
+                yield return new WaitForSeconds(0.5f);
+            }
+            Debug.Log("EAvoid end");
+            */
+            // test
+            yield return null;
             CurrentState = State.Idle;
         }
     }

@@ -4,23 +4,31 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class RotateTurret : Enemy
+    public class RotateTurret : Turret
     {
         public float rotateSpeed = 30.0f;
-        public GameObject[] bullet;
 
         new private Transform transform;
         private Transform[] childTransform;
-
-        private Vector3 direction = new Vector3(0, 0, -1);
+        private Vector3 rotateDirection;
 
         private void Awake()
         {
-            transform = GetComponent<Transform>();
-        }
+            int randomDirection = Random.Range(0, 2);
+            float direction = 0;
+            switch (randomDirection)
+            {
+                case 0:
+                    direction = -1;
+                    break;
+                case 1:
+                    direction = 1;
+                    break;
+            }
+            rotateDirection = new Vector3(0, 0, direction);
 
-        private void Start()
-        {
+            transform = GetComponent<Transform>();
+
             int childCount = transform.childCount;
 
             childTransform = new Transform[childCount];
@@ -28,37 +36,62 @@ namespace Enemy
             {
                 childTransform[i] = transform.GetChild(i);
             }
-
-            // test
-            Invoke("Test", 5f);
-        }
-
-        private void Test()
-        {
-            Shoot(10.0f, 0.1f);
+            transform.Rotate(0, 0, Random.Range(0, 360));
+            rotateSpeed = Random.Range(20, 31);
         }
 
         private void Update()
         {
-            transform.Rotate(direction * rotateSpeed * Time.deltaTime);
+            transform.Rotate(rotateDirection * rotateSpeed * Time.deltaTime);
         }
 
-        public void Shoot(float time, float bulletDelayTime)
+        public void RandomShoot(float playTime)
         {
-            StartCoroutine(EShoot(time, bulletDelayTime));
+            StartCoroutine(ERandomShoot(playTime));
         }
 
-        private IEnumerator EShoot(float playTime, float bulletDelayTime)
+        protected override IEnumerator EShoot(float playTime, Bullet bullet)
         {
+            SetBullet(bullet);
             float cuttentPlayTime = 0.0f;
             while (cuttentPlayTime <= playTime)
             {
                 for (int i = 0; i < childTransform.Length; i++)
                 {
-                    Instantiate(bullet[0], childTransform[i].position, Quaternion.identity);
+                    Instantiate(currentBullet, childTransform[i].position, Quaternion.identity);
                 }
                 cuttentPlayTime += bulletDelayTime;
                 yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(bulletDelayTime);
+            }
+        }
+
+        /// <summary>
+        /// Don't use this
+        /// </summary>
+        /// <param name="playTime"></param>
+        /// <returns></returns>
+        private IEnumerator ERandomShoot(float playTime)
+        {
+            float cuttentPlayTime = 0.0f;
+            float randomRange = Random.Range(0, 360);
+
+            while (cuttentPlayTime <= playTime)
+            {
+                float x = Mathf.Cos(randomRange) * radius;
+                float y = Mathf.Sign(randomRange) * radius;
+
+                Vector3 spawnPosition = new Vector3(x, y, 0);
+
+                Instantiate(bullets[0], spawnPosition, Quaternion.identity);
+
+                randomRange += 10;
+                if (randomRange > 350)
+                {
+                    randomRange = 0;
+                }
+                Debug.Log($"randomRange : {randomRange}");
+                cuttentPlayTime += bulletDelayTime;
                 yield return new WaitForSeconds(bulletDelayTime);
             }
         }

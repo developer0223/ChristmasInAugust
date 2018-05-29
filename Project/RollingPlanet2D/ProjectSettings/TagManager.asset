@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PauseCanvas
   - Planet
+  - Enemy
+  - Cloud
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Bullet
+  - Particle
   - 
   - 
   - 
@@ -42,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3091238713
+    locked: 0
+  - name: Particle
+    uniqueID: 1276148017
     locked: 0
