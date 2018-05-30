@@ -61,7 +61,6 @@
     <Compile Include="Assets\Scripts\Bullet\Bell.cs" />
     <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\Cloud.cs" />
-    <Compile Include="Assets\Scripts\Bullet\GuidedLaser.cs" />
     <Compile Include="Assets\Scripts\Bullet\SpeedlessBullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\SpeedyBullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\Star.cs" />
@@ -70,6 +69,7 @@
     <Compile Include="Assets\Scripts\Enemy\ThickTurret.cs" />
     <Compile Include="Assets\Scripts\Enemy\Turret.cs" />
     <Compile Include="Assets\Scripts\Exception\InvalidClassException.cs" />
+    <Compile Include="Assets\Scripts\Manager\CalculateManager.cs" />
     <Compile Include="Assets\Scripts\Manager\CoroutineRefManager.cs" />
     <Compile Include="Assets\Scripts\Manager\EffectManager.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />

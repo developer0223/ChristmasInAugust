@@ -1,5 +1,5 @@
 ﻿using UniRx;
-using System;
+using Utility;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -53,6 +53,9 @@ namespace Manager.Lobby
                 {
                     effectManager.FadeIn(blackWall, fadeInTime, (x) =>
                     {
+                        Data.Score.Total = 0;
+                        Data.Score.Snow = 0;
+                        Data.Score.Avoid = 0;
                         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
                     });
                 });

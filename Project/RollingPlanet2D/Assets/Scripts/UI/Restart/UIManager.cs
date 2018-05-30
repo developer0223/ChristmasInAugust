@@ -85,6 +85,9 @@ namespace Manager.Restart
                 {
                     effectManager.FadeIn(blackWall, fadeInTime, (x) =>
                     {
+                        Data.Score.Total = 0;
+                        Data.Score.Snow = 0;
+                        Data.Score.Avoid = 0;
                         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
                     });
                 });

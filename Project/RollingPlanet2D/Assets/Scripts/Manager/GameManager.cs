@@ -17,12 +17,13 @@ namespace Manager
         private EffectManager effectManager;
         private Image blackWall;
 
-        private Button cloudButton;
-        private GameObject cloud;
-        private Image cloudImage;
         private bool isCloudDisplaying = false;
+
         private const float cloudDisplayTime = 3.0f;
         private const float cloudFadeOutTime = 1.0f;
+
+        private GameObject cloud;
+        private Image cloudImage;
 
         private void Start()
         {
@@ -34,48 +35,6 @@ namespace Manager
             blackWall = FindComponent<Image>("BlackWall");
 
             InitCloud();
-        }
-
-        private void InitCloud()
-        {
-            cloud = GameObject.Find("Cloud");
-            cloudImage = FindComponent<Image>("Cloud");
-            Color color = cloudImage.color;
-            color.a = 0;
-            cloudImage.color = color;
-
-            cloudButton = FindComponent<Button>("CloudButton");
-            cloudButton.onClick
-                .AsObservable()
-                .Subscribe(
-                (x) =>
-                {
-                    MakeCloud();
-                });
-        }
-
-        public void MakeCloud()
-        {
-            if (!isCloudDisplaying)
-            {
-                StartCoroutine(EMakeCloud(cloudDisplayTime, cloudFadeOutTime));
-            }
-        }
-
-        private IEnumerator EMakeCloud(float displayTime, float fadeOutTime)
-        {
-            isCloudDisplaying = true;
-            Color color = cloudImage.color;
-            color.a = 1;
-            cloudImage.color = color;
-            cloud.GetComponent<BoxCollider2D>().enabled = true;
-            yield return new WaitForSeconds(displayTime);
-            effectManager.FadeOut(cloudImage, fadeOutTime / 2,
-                (x) =>
-                {
-                    isCloudDisplaying = false;
-                    cloud.GetComponent<BoxCollider2D>().enabled = false;
-                });
         }
 
         public void SetTimeScale(float scale)
@@ -106,6 +65,39 @@ namespace Manager
                 Debug.Log("restart");
             });
             Debug.Log("fadein complete");
+        }
+
+        public void MakeCloud()
+        {
+            if (!isCloudDisplaying)
+            {
+                StartCoroutine(EMakeCloud(cloudDisplayTime, cloudFadeOutTime));
+            }
+        }
+
+        private void InitCloud()
+        {
+            cloud = GameObject.Find("Cloud");
+            cloudImage = cloud.GetComponent<Image>();
+            Color color = cloudImage.color;
+            color.a = 0;
+            cloudImage.color = color;
+        }
+
+        private IEnumerator EMakeCloud(float displayTime, float fadeOutTime)
+        {
+            isCloudDisplaying = true;
+            Color color = cloudImage.color;
+            color.a = 1;
+            cloudImage.color = color;
+            cloud.GetComponent<BoxCollider2D>().enabled = true;
+            yield return new WaitForSeconds(displayTime);
+            effectManager.FadeOut(cloudImage, fadeOutTime / 2,
+                (x) =>
+                {
+                    isCloudDisplaying = false;
+                    cloud.GetComponent<BoxCollider2D>().enabled = false;
+                });
         }
     }
 }

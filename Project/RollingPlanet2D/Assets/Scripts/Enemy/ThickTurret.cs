@@ -32,9 +32,9 @@ namespace Enemy
                 float y3 = GetY(degree + 5);
                 */
 
-                Vector3 pos1 = GetPosition(degree - 5);
-                Vector3 pos2 = GetPosition(degree);
-                Vector3 pos3 = GetPosition(degree + 5);
+                Vector3 pos1 = calculateManager.GetPosition(degree - 5, radius);
+                Vector3 pos2 = calculateManager.GetPosition(degree, radius);
+                Vector3 pos3 = calculateManager.GetPosition(degree + 5, radius);
 
                 /*
                 GameObject a = Instantiate(currentBullet, new Vector3(x1, y1, 0), Quaternion.identity);

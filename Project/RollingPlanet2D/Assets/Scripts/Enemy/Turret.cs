@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Manager;
+using UnityEngine;
 using System.Collections;
 
 namespace Enemy
@@ -11,6 +12,9 @@ namespace Enemy
         protected GameObject currentBullet;
         protected float radius = 20.0f;
 
+        protected GameManager gameManager;
+        protected CalculateManager calculateManager;
+
         protected IEnumerator EShootCoroutine;
 
         public enum Bullet
@@ -20,6 +24,12 @@ namespace Enemy
             YellowStar,
             SilverStar,
             Random
+        }
+
+        private void Awake()
+        {
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            calculateManager = gameManager.GetOrCreateManager<CalculateManager>();
         }
 
         public void Shoot(float playTime, Bullet bullet)
@@ -32,24 +42,6 @@ namespace Enemy
         {
             Debug.Log("You may override EShoot method.");
             yield return null;
-        }
-
-        protected float GetX(float degree)
-        {
-            return Mathf.Cos(degree * Mathf.Deg2Rad) * radius;
-        }
-
-        protected float GetY(float degree)
-        {
-            return Mathf.Sin(degree * Mathf.Deg2Rad) * radius;
-        }
-
-        protected Vector3 GetPosition(float degree)
-        {
-            float x = Mathf.Cos(degree * Mathf.Deg2Rad) * radius;
-            float y = Mathf.Sin(degree * Mathf.Deg2Rad) * radius;
-
-            return new Vector3(x, y, 0);
         }
 
         protected void SetBullet(Bullet bullet)

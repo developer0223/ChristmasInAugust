@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Bullet
 {
-    public class Bell : SpeedyBullet {
+    public class Bell : SpeedyBullet
+    {
 
         private void Start()
         {
@@ -14,20 +15,21 @@ namespace Bullet
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag(Data.Tags.PLANET) ||
-                collision.CompareTag(Data.Tags.CLOUD))
+            if (collision.CompareTag(Data.Tags.PLANET))
             {
-                // audioSource.PlayOneShot(audioClip);
-                AddScore();
                 ShowParticle();
-                Destroy(gameObject);
+                AddScore();
             }
-
-            if (collision.CompareTag(Data.Tags.PLAYER))
+            else if (collision.CompareTag(Data.Tags.PLAYER))
             {
-                Destroy(gameObject);
                 collision.gameObject.GetComponent<SnowMan>().Damage(Damage);
             }
+            else if (collision.CompareTag(Data.Tags.CLOUD))
+            {
+                AddScore();
+            }
+
+            Destroy(gameObject);
         }
 
         private void AddScore()

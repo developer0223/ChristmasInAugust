@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Manager;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -18,7 +19,7 @@ namespace Enemy
             while (currentPlayTime < playTime)
             {
                 float randomAngle = Random.Range(0, 360);
-                Vector3 spawnPosition = GetPosition(randomAngle);
+                Vector3 spawnPosition = calculateManager.GetPosition(randomAngle, radius);
 
                 Instantiate(currentBullet, spawnPosition, Quaternion.identity);
 

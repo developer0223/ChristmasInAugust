@@ -78,11 +78,15 @@ namespace Player
             {
                 Move(Direction.None);
             }
-
+            
+            
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                gameManager.MakeCloud();
+                Debug.Log($"GetKeydown : 1");
+                gameManager.GetOrCreateManager<ItemManager>().MakeCloud();
             }
+            
+            
 #elif UNITY_ANDROID
 #endif
         }
