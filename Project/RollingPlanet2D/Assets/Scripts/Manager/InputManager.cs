@@ -6,16 +6,19 @@ namespace Manager
 {
     public class InputManager : Manager, IPointerEnterHandler, IPointerExitHandler
     {
-        private SnowMan player;
+        private Player.Player player;
         private bool pressed = false;
 
-        private void Awake()
+        private void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<SnowMan>();
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player.Player>();
         }
 
         private void Update()
         {
+#if UNITY_EDITOR
+#elif UNITY_ANDROID
+            Debug.Log($"UNITY_ANDROID : InputManager");
             if (pressed)
             {
                 Move(gameObject.name);
@@ -24,21 +27,22 @@ namespace Manager
             {
                 Move("");
             }
+#endif
         }
 
         public void Move(string objName)
         {
-            SnowMan.Direction direction = SnowMan.Direction.None;
+            Player.Player.Direction direction = Player.Player.Direction.None;
             switch (objName)
             {
                 case "LeftButton":
-                    direction = SnowMan.Direction.Left;
+                    direction = Player.Player.Direction.Left;
                     break;
                 case "RightButton":
-                    direction = SnowMan.Direction.Right;
+                    direction = Player.Player.Direction.Right;
                     break;
                 default:
-                    direction = SnowMan.Direction.None;
+                    direction = Player.Player.Direction.None;
                     break;
             }
             player.Move(direction);

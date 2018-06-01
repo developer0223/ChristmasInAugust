@@ -9,12 +9,19 @@ namespace Enemy
     {
         void Start()
         {
-            bulletDelayTime = 0.1f;
+            bulletDelayTime = 0.3f;
             SetBullet(Bullet.AngryBullet);
         }
 
-        protected override IEnumerator EShoot(float playTime, Bullet bullet)
+        public void Shoot(float playTime, float delayTime, Bullet bullet)
         {
+            StartCoroutine(EShoot(playTime, delayTime, bullet));
+        }
+
+        protected IEnumerator EShoot(float playTime, float delayTime, Bullet bullet)
+        {
+            GameObject currentBullet = SetBullet(bullet);
+
             float currentPlayTime = 0.0f;
             while (currentPlayTime < playTime)
             {

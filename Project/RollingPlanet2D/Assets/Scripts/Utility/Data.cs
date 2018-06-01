@@ -4,10 +4,28 @@ namespace Utility
 {
     public class Data
     {
+        public static int Stage { get; set; } = 0;
+        public static bool IsEasterEgg = false;
+
+        public static void InitData()
+        {
+            Score.Total = 0;
+            Score.Snow = 0;
+            Score.Avoid = 0;
+
+            Item.SlowWatch = 0;
+            Stage = 0;
+        }
+
         public struct ModifyData
         {
             public bool MuteBGM { get; set; }
             public bool MuteEffect { get; set; }
+        }
+
+        public struct Item
+        {
+            public static int SlowWatch { get; set; } = 0;
         }
 
         public struct Score

@@ -7,12 +7,13 @@ namespace Enemy
     public class RotateTurret : Turret
     {
         public float rotateSpeed = 30.0f;
+        public GameObject bullet;
 
         new private Transform transform;
         private Transform[] childTransform;
         private Vector3 rotateDirection;
 
-        private void Awake()
+        private void Start()
         {
             int randomDirection = Random.Range(0, 2);
             float direction = 0;
@@ -20,6 +21,7 @@ namespace Enemy
             {
                 case 0:
                     direction = -1;
+                    // 
                     break;
                 case 1:
                     direction = 1;
@@ -45,20 +47,22 @@ namespace Enemy
             transform.Rotate(rotateDirection * rotateSpeed * Time.deltaTime);
         }
 
-        public void RandomShoot(float playTime)
+        public void Shoot(float playTime, float delayTime = 0.0f)
         {
-            StartCoroutine(ERandomShoot(playTime));
+            // StartCoroutine(ERandomShoot(playTime, delayTime));
+            StartCoroutine(EShoot(playTime, delayTime));
         }
 
-        protected override IEnumerator EShoot(float playTime, Bullet bullet)
+        protected IEnumerator EShoot(float playTime, float delayTime = 0.0f)
         {
-            SetBullet(bullet);
+            yield return new WaitForSeconds(delayTime);
+
             float cuttentPlayTime = 0.0f;
             while (cuttentPlayTime <= playTime)
             {
                 for (int i = 0; i < childTransform.Length; i++)
                 {
-                    Instantiate(currentBullet, childTransform[i].position, Quaternion.identity);
+                    Instantiate(bullet, childTransform[i].position, Quaternion.identity);
                 }
                 cuttentPlayTime += bulletDelayTime;
                 yield return new WaitForEndOfFrame();
@@ -66,22 +70,26 @@ namespace Enemy
             }
         }
 
+        /*
         /// <summary>
         /// Don't use this
         /// </summary>
         /// <param name="playTime"></param>
         /// <returns></returns>
-        private IEnumerator ERandomShoot(float playTime)
+        private IEnumerator ERandomShoot(float playTime, float delayTime = 0.0f)
         {
+            yield return new WaitForSeconds(delayTime);
+
+            playTime = 10.0f;
+
             float cuttentPlayTime = 0.0f;
             float randomRange = Random.Range(0, 360);
 
+            Debug.Log($"ERandomShoot start");
+
             while (cuttentPlayTime <= playTime)
             {
-                float x = Mathf.Cos(randomRange) * radius;
-                float y = Mathf.Sign(randomRange) * radius;
-
-                Vector3 spawnPosition = new Vector3(x, y, 0);
+                Vector3 spawnPosition = calculateManager.GetPosition(randomRange, radius);
 
                 Instantiate(bullets[0], spawnPosition, Quaternion.identity);
 
@@ -90,10 +98,10 @@ namespace Enemy
                 {
                     randomRange = 0;
                 }
-                Debug.Log($"randomRange : {randomRange}");
                 cuttentPlayTime += bulletDelayTime;
                 yield return new WaitForSeconds(bulletDelayTime);
             }
         }
+        */
     }
 }

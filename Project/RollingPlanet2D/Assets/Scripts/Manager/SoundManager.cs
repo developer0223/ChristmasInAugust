@@ -5,23 +5,23 @@ namespace Manager
     [RequireComponent(typeof(AudioSource))]
     public class SoundManager : Manager
     {
-        private const string BGM_PATH = "Sounds/BGM/";
-        private const string SOUND_PATH = "Prefabs/Sound/Sound";
+        private readonly string BGM_PATH = "Sounds/BGM/";
+        private readonly string SOUND_PATH = "Prefabs/Sound/Sound";
         private AudioSource clipManager;
 
-        public AudioClip age_of_war;
+        public AudioClip backgroundMusic;
 
         private void Awake()
         {
             clipManager = GetComponent<AudioSource>();
             clipManager.playOnAwake = false;
 
-            age_of_war = Resources.Load($"{BGM_PATH}MapleStory") as AudioClip;
+            backgroundMusic = Resources.Load($"{BGM_PATH}TD_Sun_Village_FULL_Loop") as AudioClip;
         }
 
         private void Start()
         {
-            PlayBGM(age_of_war);
+            PlayBGM(backgroundMusic);
         }
 
         public void PlayBGM(AudioClip clip)

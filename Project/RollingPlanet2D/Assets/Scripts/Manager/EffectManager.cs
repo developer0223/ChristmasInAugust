@@ -8,8 +8,8 @@ namespace Manager
 {
     public class EffectManager : Manager
     {
-        private const float start = 0.0f;
-        private const float end = 1.0f;
+        private readonly float start = 0.0f;
+        private readonly float end = 1.0f;
 
         public void FadeIn(Text text, float playTime)
         {
@@ -82,9 +82,9 @@ namespace Manager
                 image.color = color;
                 yield return null;
             }
+            fadeIn(null);
             color.a = 1;
             image.color = color;
-            fadeIn(null);
         }
 
         private IEnumerator EFadeOut(Image image, float playTime, Action<object> fadeOut)
@@ -98,9 +98,9 @@ namespace Manager
                 image.color = color;
                 yield return null;
             }
+            fadeOut(null);
             color.a = 0;
             image.color = color;
-            fadeOut(null);
         }
     }
 }

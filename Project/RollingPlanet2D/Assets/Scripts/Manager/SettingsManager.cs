@@ -8,8 +8,8 @@ namespace Manager
 {
     public class SettingsManager : Manager
     {
-        private const string muteBGM = "muteBGM";
-        private const string muteEffect = "muteEffect";
+        private readonly string muteBGM = "muteBGM";
+        private readonly string muteEffect = "muteEffect";
 
         private string settingsPath;
         // private string[] jsonKeyArray = { muteBGM, muteEffect };

@@ -16,8 +16,8 @@ namespace Manager.Lobby
 
         private bool isPopUpDisplaying = false;
 
-        private const float fadeInTime = 2.0f;
-        private const float delayTime = 1.0f;
+        private readonly float fadeInTime = 2.0f;
+        private readonly float delayTime = 1.0f;
 
         private EffectManager effectManager;
 
@@ -53,9 +53,7 @@ namespace Manager.Lobby
                 {
                     effectManager.FadeIn(blackWall, fadeInTime, (x) =>
                     {
-                        Data.Score.Total = 0;
-                        Data.Score.Snow = 0;
-                        Data.Score.Avoid = 0;
+                        Data.InitData();
                         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
                     });
                 });

@@ -1,4 +1,4 @@
-﻿using Player;
+﻿using Manager;
 using Utility;
 using UnityEngine;
 
@@ -9,7 +9,19 @@ namespace Bullet
 
         private void Start()
         {
-            Speed = 250.0f;
+            switch (gameObject.name)
+            {
+                // todo : 상속구조로 변경하기
+                case "AngryBullet(Clone)":
+                    Speed = 250.0f;
+                    break;
+                case "GrumpyBullet(Clone)":
+                    Speed = 200.0f;
+                    break;
+                default:
+                    Debug.Log($"diffferent tag : {gameObject.name}");
+                    break;
+            }
             rigidbody2D.AddForce(direction.normalized * Speed);
         }
 
@@ -18,18 +30,31 @@ namespace Bullet
             if (collision.CompareTag(Data.Tags.PLANET))
             {
                 ShowParticle();
-                AddScore();
+                Destroy(gameObject);
+                if (!Data.IsEasterEgg)
+                {
+                    AddScore();
+                }
             }
             else if (collision.CompareTag(Data.Tags.PLAYER))
             {
-                collision.gameObject.GetComponent<SnowMan>().Damage(Damage);
+                Destroy(gameObject);
+                if (Data.IsEasterEgg)
+                {
+                    AddScore();
+                    gameManager.GetOrCreateManager<SoundManager>().Play(destroySound, transform.position);
+                }
+                else
+                {
+                    Debug.Log($"Bell : damage : {Data.IsEasterEgg}");
+                    collision.gameObject.GetComponent<Player.Player>().Damage(Damage);
+                }
             }
             else if (collision.CompareTag(Data.Tags.CLOUD))
             {
                 AddScore();
+                Destroy(gameObject);
             }
-
-            Destroy(gameObject);
         }
 
         private void AddScore()

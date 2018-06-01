@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 1629888290061918, guid: 359c554e2e29b5446adc9690f4249316, type: 2}
-  destroySound: {fileID: 0}
+  destroySound: {fileID: 8300000, guid: ea84adeccfb1e884584c57431317b5f2, type: 3}
 --- !u!212 &212106661138368442
 SpriteRenderer:
   m_ObjectHideFlags: 1

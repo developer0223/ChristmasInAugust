@@ -1,6 +1,5 @@
 ﻿using UniRx;
 using Utility;
-using MyException;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -12,18 +11,17 @@ namespace Manager
         public const float TIME_NORMAL = 1.0f;
         public const float TIME_SLOWLY = 0.33f;
 
-        private delegate void EmptyDel();
+        // private delegate void EmptyDel();
 
         private EffectManager effectManager;
         private Image blackWall;
 
-        private bool isCloudDisplaying = false;
-
-        private const float cloudDisplayTime = 3.0f;
-        private const float cloudFadeOutTime = 1.0f;
-
-        private GameObject cloud;
-        private Image cloudImage;
+        private void Awake()
+        {
+            bool isEasterEgg = GetOrCreateManager<LevelManager>().SetBackground();
+            Data.IsEasterEgg = isEasterEgg;
+            SpawnRandomPlayer();
+        }
 
         private void Start()
         {
@@ -33,19 +31,39 @@ namespace Manager
 
             effectManager = GetOrCreateManager<EffectManager>();
             blackWall = FindComponent<Image>("BlackWall");
+        }
 
-            InitCloud();
+        private void SpawnRandomPlayer()
+        {
+            string playerPath = "Prefabs/Player/";
+            int random = Random.Range(0, 2);
+            GameObject player = null;
+            switch (random)
+            {
+                case 0:
+                    player = Resources.Load($"{playerPath}WinterPlayer") as GameObject;
+                    break;
+                case 1:
+                    player = Resources.Load($"{playerPath}SummerPlayer") as GameObject;
+                    break;
+            }
+
+            Instantiate(player, Vector3.zero, Quaternion.identity);
         }
 
         public void SetTimeScale(float scale)
         {
-            Debug.Log($"Set Time.timeScale to {scale}.");
             Time.timeScale = scale;
         }
 
-        public T GetManager<T>() where T : Manager
+        public void SetTimeScaleToOne(float time)
         {
-            return GetOrCreateManager<T>();
+            StartCoroutine(ESetTimeScaleToOne(time));
+        }
+
+        private IEnumerator ESetTimeScaleToOne(float time)
+        {
+            yield return null;
         }
 
         public void FadeOut()
@@ -65,39 +83,6 @@ namespace Manager
                 Debug.Log("restart");
             });
             Debug.Log("fadein complete");
-        }
-
-        public void MakeCloud()
-        {
-            if (!isCloudDisplaying)
-            {
-                StartCoroutine(EMakeCloud(cloudDisplayTime, cloudFadeOutTime));
-            }
-        }
-
-        private void InitCloud()
-        {
-            cloud = GameObject.Find("Cloud");
-            cloudImage = cloud.GetComponent<Image>();
-            Color color = cloudImage.color;
-            color.a = 0;
-            cloudImage.color = color;
-        }
-
-        private IEnumerator EMakeCloud(float displayTime, float fadeOutTime)
-        {
-            isCloudDisplaying = true;
-            Color color = cloudImage.color;
-            color.a = 1;
-            cloudImage.color = color;
-            cloud.GetComponent<BoxCollider2D>().enabled = true;
-            yield return new WaitForSeconds(displayTime);
-            effectManager.FadeOut(cloudImage, fadeOutTime / 2,
-                (x) =>
-                {
-                    isCloudDisplaying = false;
-                    cloud.GetComponent<BoxCollider2D>().enabled = false;
-                });
         }
     }
 }

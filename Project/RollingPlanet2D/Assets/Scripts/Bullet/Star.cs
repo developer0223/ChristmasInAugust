@@ -22,13 +22,28 @@ namespace Bullet
             if (collision.CompareTag(Data.Tags.PLANET))
             {
                 Destroy(gameObject);
+                if (Data.IsEasterEgg)
+                {
+                    AddScore();
+                }
             }
-
-            if (collision.CompareTag(Data.Tags.PLAYER) ||
-                collision.CompareTag(Data.Tags.CLOUD))
+            else if (collision.CompareTag(Data.Tags.PLAYER))
+            {
+                if (Data.IsEasterEgg)
+                {
+                    collision.gameObject.GetComponent<Player.Player>().Damage(Damage);
+                }
+                else
+                {
+                    gameManager.GetOrCreateManager<SoundManager>().Play(destroySound, transform.position);
+                    AddScore();
+                    ShowParticle();
+                }
+                Destroy(gameObject);
+            }
+            else if (collision.CompareTag(Data.Tags.CLOUD))
             {
                 AddScore();
-                gameManager.GetOrCreateManager<SoundManager>().Play(destroySound, transform.position);
                 Destroy(gameObject);
             }
         }
@@ -41,7 +56,7 @@ namespace Bullet
                 case "SilverSnow(Clone)":
                     Data.Score.Snow += 3;
                     break;
-                case "PinkSnow(Clone)":
+                case "YellowSnow(Clone)":
                     Data.Score.Snow += 4;
                     break;
                 default:

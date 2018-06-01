@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 24b09a175bff27c4f9181b5bcfe16b64
+timeCreated: 1527829266
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Typo_SsangmunDong
+  fontNames:
+  - Typo_SsangmunDong
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

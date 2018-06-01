@@ -6,49 +6,75 @@ namespace Enemy
 {
     public class ThickTurret : Turret
     {
-        private void Start()
+        private bool isTimeScaleChanged = false;
+
+        private void Update()
         {
-            Shoot(0, 360, 3.0f, Bullet.SilverStar);
+            if (Time.timeScale == 1)
+            {
+                isTimeScaleChanged = false;
+            }
+            else
+            {
+                isTimeScaleChanged = true;
+            }
         }
 
-        public void Shoot(int startDegree, int endDegree, float playTime, Bullet bullet)
+        public void Shoot(int startDegree, int endDegree, Bullet bullet, float delayTime = 0.0f)
         {
             SetBullet(bullet);
-            StartCoroutine(EShoot(startDegree, endDegree, playTime, bullet));
+            StartCoroutine(EShoot(startDegree, endDegree, bullet, delayTime));
         }
 
-        protected IEnumerator EShoot(int startDegree, int endDegree, float playTime, Bullet bullet)
+        protected IEnumerator EShoot(int startDegree, int endDegree, Bullet bullet, float delayTime = 0.0f)
         {
-            for (int degree = startDegree; degree <= endDegree; degree += 3)
+            yield return new WaitForSeconds(delayTime);
+
+            GameObject currentBullet = SetBullet(bullet);
+
+            if (startDegree > endDegree)
             {
-                /*
-                float x1 = GetX(degree - 5);
-                float y1 = GetY(degree - 5);
-                
-                float x2 = GetX(degree);
-                float y2 = GetY(degree);
-                
-                float x3 = GetX(degree + 5);
-                float y3 = GetY(degree + 5);
-                */
+                for (int degree = startDegree; degree >= endDegree; degree -= 5)
+                {
+                    Vector3 pos1 = calculateManager.GetPosition(degree - 5, radius);
+                    Vector3 pos2 = calculateManager.GetPosition(degree, radius);
+                    Vector3 pos3 = calculateManager.GetPosition(degree + 5, radius);
 
-                Vector3 pos1 = calculateManager.GetPosition(degree - 5, radius);
-                Vector3 pos2 = calculateManager.GetPosition(degree, radius);
-                Vector3 pos3 = calculateManager.GetPosition(degree + 5, radius);
+                    GameObject a = Instantiate(currentBullet, pos1, Quaternion.identity);
+                    GameObject b = Instantiate(currentBullet, pos2, Quaternion.identity);
+                    GameObject c = Instantiate(currentBullet, pos3, Quaternion.identity);
 
-                /*
-                GameObject a = Instantiate(currentBullet, new Vector3(x1, y1, 0), Quaternion.identity);
-                GameObject b = Instantiate(currentBullet, new Vector3(x2, y2, 0), Quaternion.identity);
-                GameObject c = Instantiate(currentBullet, new Vector3(x3, y3, 0), Quaternion.identity);
-                */
-
-                GameObject a = Instantiate(currentBullet, pos1, Quaternion.identity);
-                GameObject b = Instantiate(currentBullet, pos2, Quaternion.identity);
-                GameObject c = Instantiate(currentBullet, pos3, Quaternion.identity);
-
-                // yield return new WaitForSeconds((endDegree - startDegree) / 10 / playTime);
-                yield return new WaitForSecondsRealtime(0.1f);
+                    yield return new WaitForSeconds(0.000000000001f);
+                    float waitTime = 0.15f;
+                    if (isTimeScaleChanged)
+                    {
+                        waitTime = waitTime * (1 / Time.timeScale);
+                    }
+                    yield return new WaitForSecondsRealtime(waitTime);
+                }
             }
+            else
+            {
+                for (int degree = startDegree; degree <= endDegree; degree += 5)
+                {
+                    Vector3 pos1 = calculateManager.GetPosition(degree - 5, radius);
+                    Vector3 pos2 = calculateManager.GetPosition(degree, radius);
+                    Vector3 pos3 = calculateManager.GetPosition(degree + 5, radius);
+
+                    GameObject a = Instantiate(currentBullet, pos1, Quaternion.identity);
+                    GameObject b = Instantiate(currentBullet, pos2, Quaternion.identity);
+                    GameObject c = Instantiate(currentBullet, pos3, Quaternion.identity);
+
+                    yield return new WaitForSeconds(0.000000000001f);
+                    float waitTime = 0.15f;
+                    if (isTimeScaleChanged)
+                    {
+                        waitTime = waitTime * (1 / Time.timeScale);
+                        Debug.Log(waitTime);
+                    }
+                    yield return new WaitForSecondsRealtime(waitTime);
+                }
+            }            
         }
     }
 }

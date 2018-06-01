@@ -12,8 +12,9 @@ namespace Player
     {
         #region Properties
         public int Hp { get; set; } = 100;
-        public float Speed { get; } = 50.0f;
+        public float Speed { get; set; } = 50.0f;
         public float AvoidTime { get; set; } = 3.0f;
+        public float BlinkingTime { get; set; } = 0.2f;
 
         private State CurrentState { get; set; }
         private bool IsBlinking { get; set; } = false;
@@ -38,6 +39,8 @@ namespace Player
         public const string IDLE = "isIdle";
         public const string LEFT = "isLeftWalking";
         public const string RIGHT = "isRightWalking";
+
+        private bool isAvoiding = false;
         #endregion
 
         private void Awake()
@@ -53,19 +56,6 @@ namespace Player
         private void Update()
         {
 #if UNITY_EDITOR
-            /*
-            Color color = spriteRenderer.color;
-            if (IsBlinking)
-            {
-                color.a = 0.2f;
-            }
-            else
-            {
-                color.a = 1f;
-            }
-            spriteRenderer.color = color;
-            */
-
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 Move(Direction.Left);
@@ -78,16 +68,15 @@ namespace Player
             {
                 Move(Direction.None);
             }
-            
-            
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log($"GetKeydown : 1");
-                gameManager.GetOrCreateManager<ItemManager>().MakeCloud();
+                gameManager.GetOrCreateManager<ItemManager>().UseWatchItem();
             }
-            
-            
 #elif UNITY_ANDROID
+
+            Debug.Log($"UNITY_ANDROID : Player");
+
 #endif
         }
 
@@ -118,18 +107,12 @@ namespace Player
             CurrentState = State.Idle;
         }
 
-        /// <summary>
-        /// Moves player to Direction.
-        /// </summary>
-        /// <param name="direction">Use to verify direction</param>
-        public void Move(Direction direction)
+        public bool PlayAnim(Direction direction, ref int dir)
         {
             if (CurrentState == State.Die)
             {
-                return;
+                return true;
             }
-
-            int dir = 0;
             switch (direction)
             {
                 case Direction.Left:
@@ -137,22 +120,33 @@ namespace Player
                     animator.SetBool(LEFT, true);
                     animator.SetBool(RIGHT, false);
                     animator.SetBool(IDLE, false);
-                    // Debug.Log("Left");
                     break;
                 case Direction.Right:
                     dir = -1;
                     animator.SetBool(LEFT, false);
                     animator.SetBool(RIGHT, true);
                     animator.SetBool(IDLE, false);
-                    // Debug.Log("Right");
                     break;
                 case Direction.None:
                     CurrentState = State.Idle;
                     animator.SetBool(LEFT, false);
                     animator.SetBool(RIGHT, false);
                     animator.SetBool(IDLE, true);
-                    // Debug.Log("None");
                     break;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Moves player to Direction.
+        /// </summary>
+        /// <param name="direction">Use to verify direction</param>
+        public void Move(Direction direction)
+        {
+            int dir = 0;
+            if(PlayAnim(direction, ref dir))
+            { 
+                return;
             }
             MoveTo(dir);
         }
@@ -163,7 +157,7 @@ namespace Player
         /// <param name="damage"></param>
         public void Damage(int damage)
         {
-            if (CurrentState == State.Move || CurrentState == State.Idle)
+            if (!isAvoiding)
             {
                 Hp -= damage;
                 hpBar.fillAmount = Hp * 0.01f;
@@ -176,12 +170,6 @@ namespace Player
                     Die();
                 }
             }
-            /*
-            else if (CurrentState == State.Damage || CurrentState == State.Die)
-            {
-                // do nothing
-            }
-            */
         }
 
         /// <summary>
@@ -230,34 +218,38 @@ namespace Player
 
         private IEnumerator EAvoid(float avoidTime)
         {
+            Debug.Log("avoid");
             CurrentState = State.Damage;
-            /*
+            isAvoiding = true;
             float currentTime = 0.0f;
             Color color = spriteRenderer.color;
             bool blink = false;
 
-            
-            Debug.Log("EAvoid start");
             while (currentTime < avoidTime)
             {
-                Debug.Log($"blink : {blink}");
                 if (blink)
                 {
                     IsBlinking = false;
+                    color.a = 1;
                 }
                 else
                 {
                     IsBlinking = true;
+                    color.a = 0.5f;
                 }
                 spriteRenderer.color = color;
                 blink = !blink;
-                yield return new WaitForSeconds(0.5f);
+
+                float waitTime = BlinkingTime;
+                currentTime += waitTime;
+                yield return new WaitForSeconds(waitTime);
             }
-            Debug.Log("EAvoid end");
-            */
-            // test
-            yield return null;
+
+            color.a = 1f;
+            spriteRenderer.color = color;
+
             CurrentState = State.Idle;
+            isAvoiding = false;
         }
     }
 }

@@ -19,8 +19,8 @@ namespace Manager.Restart
         public Text currentScore;
         public Text bestScore;
 
-        private const float fadeInTime = 2.0f;
-        private const float delayTime = 1.0f;
+        private readonly float fadeInTime = 2.0f;
+        private readonly float delayTime = 1.0f;
 
         private EffectManager effectManager;
 
@@ -85,9 +85,7 @@ namespace Manager.Restart
                 {
                     effectManager.FadeIn(blackWall, fadeInTime, (x) =>
                     {
-                        Data.Score.Total = 0;
-                        Data.Score.Snow = 0;
-                        Data.Score.Avoid = 0;
+                        Data.InitData();
                         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
                     });
                 });

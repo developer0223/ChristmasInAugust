@@ -9,20 +9,21 @@ namespace Enemy
         public GameObject[] bullets = new GameObject[4];
 
         protected float bulletDelayTime = 0.2f;
-        protected GameObject currentBullet;
+        // protected GameObject currentBullet;
         protected float radius = 20.0f;
 
         protected GameManager gameManager;
         protected CalculateManager calculateManager;
 
+        //v
         protected IEnumerator EShootCoroutine;
 
         public enum Bullet
         {
             AngryBullet,
             GrumpyBullet,
-            YellowStar,
-            SilverStar,
+            YellowSnow,
+            SilverSnow,
             Random
         }
 
@@ -32,19 +33,7 @@ namespace Enemy
             calculateManager = gameManager.GetOrCreateManager<CalculateManager>();
         }
 
-        public void Shoot(float playTime, Bullet bullet)
-        {
-            SetBullet(bullet);
-            StartCoroutine(EShoot(playTime, bullet));
-        }
-
-        protected virtual IEnumerator EShoot(float playTime, Bullet bullet)
-        {
-            Debug.Log("You may override EShoot method.");
-            yield return null;
-        }
-
-        protected void SetBullet(Bullet bullet)
+        protected GameObject SetBullet(Bullet bullet)
         {
             GameObject obj = null;
             switch (bullet)
@@ -55,17 +44,17 @@ namespace Enemy
                 case Bullet.GrumpyBullet:
                     obj = bullets[1];
                     break;
-                case Bullet.SilverStar:
+                case Bullet.SilverSnow:
                     obj = bullets[2];
                     break;
-                case Bullet.YellowStar:
+                case Bullet.YellowSnow:
                     obj = bullets[3];
                     break;
                 case Bullet.Random:
                     obj = bullets[Random.Range(0, bullets.Length)];
                     break;
             }
-            currentBullet = obj;
+            return obj;
         }
     }
 }

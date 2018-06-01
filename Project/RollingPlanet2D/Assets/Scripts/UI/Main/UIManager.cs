@@ -1,4 +1,5 @@
 ﻿using UniRx;
+using Utility;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace Manager.Main
         private List<Canvas> canvasList;
 
         public Image blackWall;
+
+        private Text watchCountText;
 
         #region pause state
         private Canvas pauseCanvas;
@@ -37,12 +40,19 @@ namespace Manager.Main
             FindCanvas();
             FindButton();
             gameManager.FadeOut();
+
+            watchCountText = FindComponent<Text>("WatchText");
+        }
+
+        private void Update()
+        {
+            watchCountText.text = Data.Item.SlowWatch.ToString();
         }
 
         private void FindButton()
         {
             #region paused state
-            pausedButton = FindComponent<Button>("PauseButton");
+            // pausedButton = FindComponent<Button>("PauseButton");
             resumeButton = FindComponent<Button>("ResumeButton");
             settingsButton = FindComponent<Button>("SettingsButton");
             quitButton = FindComponent<Button>("QuitButton");
@@ -73,7 +83,7 @@ namespace Manager.Main
         public void SetOnClickListener()
         {
             #region pausebutton
-            pausedButton.onClick
+            pausedButton?.onClick
                 .AsObservable()
                 .Subscribe(_ =>
                 {
@@ -112,7 +122,7 @@ namespace Manager.Main
                 .AsObservable()
                 .Subscribe(x =>
                 {
-                    Debug.Log($"quitButton clicked");
+                    Application.Quit();
                 });
             #endregion
             #region muteBGMButton

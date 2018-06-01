@@ -9,21 +9,18 @@ namespace Bullet
 {
     public class Cloud : SpeedyBullet
     {
-        EffectManager effectManager;
-
         void Start()
         {
-            effectManager = gameManager.GetOrCreateManager<EffectManager>();
-
             Speed = 100.0f;
             rigidbody2D.AddForce(direction.normalized * Speed);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag(Data.Tags.PLAYER))
+            if (collision.CompareTag(Data.Tags.PLAYER) ||
+                collision.CompareTag(Data.Tags.CLOUD))
             {
-                gameManager.MakeCloud();
+                itemManager.UseCloud();
                 Destroy(gameObject);
             }
             else if (collision.CompareTag(Data.Tags.PLANET))

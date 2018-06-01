@@ -24,5 +24,21 @@ namespace Manager
 
             return new Vector3(x, y, 0);
         }
+
+        public int GetRandomAngle()
+        {
+            return Random.Range(0, 360);
+        }
+
+        public int GetRandomEndAngle(int startDegree, int min = 30, int max = 90)
+        {
+            int endDegree = startDegree + Random.Range(min, max);
+            return (endDegree > 360 ? endDegree - 360 : endDegree);
+        }
+
+        public float GetRandomDelayTime(float start, float end)
+        {
+            return Mathf.Lerp(start, end, Random.Range(0.0f, 1.0f));
+        }
     }
 }

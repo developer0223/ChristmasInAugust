@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44e8789010f82d4b806675a8b0bbaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 0}
+  particle: {fileID: 1124329961079544, guid: 35f6a31b2c341124583d56b6f6f69847, type: 2}
   destroySound: {fileID: 8300000, guid: ea84adeccfb1e884584c57431317b5f2, type: 3}
 --- !u!212 &212956299912977498
 SpriteRenderer:
@@ -136,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0b1d18b9b0fc7ed42931558fb80e963c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 906e9a5af9770804898dfe1d374cf082, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

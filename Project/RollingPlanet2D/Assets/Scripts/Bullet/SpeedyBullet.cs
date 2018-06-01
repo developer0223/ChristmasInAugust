@@ -17,6 +17,8 @@ namespace Bullet
         new protected Rigidbody2D rigidbody2D;
         new protected Transform transform;
         protected AudioSource audioSource;
+        protected EffectManager effectManager;
+        protected ItemManager itemManager;
         #endregion
 
         #region Variables
@@ -37,6 +39,8 @@ namespace Bullet
             transform = GetComponent<Transform>();
             audioSource = GetComponent<AudioSource>();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            effectManager = gameManager.GetOrCreateManager<EffectManager>();
+            itemManager = gameManager.GetOrCreateManager<ItemManager>();
 
             rigidbody2D = GetComponent<Rigidbody2D>();
             rigidbody2D.simulated = true;
