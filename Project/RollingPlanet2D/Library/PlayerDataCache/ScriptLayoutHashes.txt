@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-F:/GitHub/RollingPlanet2D/Project/RollingPlanet2D/Builds/T3.apk
+F:/GitHub/RollingPlanet2D/Project/RollingPlanet2D/Builds/Christmas_in_August_v1.0.apk
 SceneListBegin?
 Assets/Scenes/Release/Lobby.unity
 Assets/Scenes/Release/Main.unity
