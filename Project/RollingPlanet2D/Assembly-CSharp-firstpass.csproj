@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_1_0;UNITY_2018_1;UNITY_2018;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_1_0;UNITY_2018_1;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -68,146 +68,6 @@
     <Compile Include="Assets\Plugins\LitJson\Lexer.cs" />
     <Compile Include="Assets\Plugins\LitJson\Netstandard15Polyfill.cs" />
     <Compile Include="Assets\Plugins\LitJson\ParserToken.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Game\UIEquipmentSlot.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Game\UIItemSlot.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Game\UIItemStorage.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\Game\UIStorageSlot.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\System\InvAttachmentPoint.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\System\InvBaseItem.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\System\InvDatabase.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\System\InvEquipment.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\System\InvGameItem.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\InventorySystem\System\InvStat.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\ChatInput.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\DownloadTexture.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\ExampleDragDropItem.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\ExampleDragDropSurface.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\LagPosition.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\LagRotation.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\LoadLevelOnClick.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\LookAtTarget.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\OpenURLOnClick.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\PanWithMouse.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\PlayIdleAnimations.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\SetColorPickerColor.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\Spin.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\SpinWithMouse.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\Tutorial5.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\UISliderColors.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\WindowAutoYaw.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Examples\Scripts\Other\WindowDragTilt.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\EnvelopContent.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\LanguageSelection.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\TypewriterEffect.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIButton.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIButtonActivate.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIButtonColor.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIButtonKeys.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIButtonMessage.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIButtonOffset.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIButtonRotation.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIButtonScale.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UICenterOnChild.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UICenterOnClick.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIDragCamera.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIDragDropContainer.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIDragDropItem.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIDragDropRoot.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIDraggableCamera.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIDragObject.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIDragResize.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIDragScrollView.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIEventTrigger.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIForwardEvents.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIGrid.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIImageButton.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIKeyBinding.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIKeyNavigation.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIPlayAnimation.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIPlaySound.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIPlayTween.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIPopupList.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIProgressBar.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UISavedOption.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIScrollBar.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIScrollView.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIShowControlScheme.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UISlider.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UISoundVolume.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UITable.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIToggle.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIToggledComponents.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIToggledObjects.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIWidgetContainer.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Interaction\UIWrapContent.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\ActiveAnimation.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\AnimationOrTween.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\BetterList.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\BMFont.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\BMGlyph.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\BMSymbol.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\ByteReader.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\EventDelegate.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\Localization.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\MinMaxRangeAttribute.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\NGUIDebug.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\NGUIMath.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\NGUIText.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\NGUITools.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\PropertyBinding.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\PropertyReference.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\RealTime.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\SpringPanel.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\UIBasicSprite.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\UIDrawCall.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\UIEventListener.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\UIGeometry.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\UIRect.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\UISnapshotPoint.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Internal\UIWidget.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\AnimatedAlpha.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\AnimatedColor.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\AnimatedWidget.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\SpringPosition.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenAlpha.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenColor.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenFill.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenFOV.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenHeight.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenLetters.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenOrthoSize.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenPosition.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenRotation.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenScale.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenTransform.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenVolume.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\TweenWidth.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\Tweening\UITweener.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UI2DSprite.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UI2DSpriteAnimation.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIAnchor.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIAtlas.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UICamera.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIColorPicker.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIFont.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIInput.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIInputOnGUI.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UILabel.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UILocalize.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIOrthoCamera.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIPanel.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIRoot.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UISprite.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UISpriteAnimation.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UISpriteData.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIStretch.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UITextList.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UITexture.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UITooltip.cs" />
-    <Compile Include="Assets\Plugins\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\Plugins\UniRx\Examples\Sample01_ObservableWWW.cs" />
     <Compile Include="Assets\Plugins\UniRx\Examples\Sample02_ObservableTriggers.cs" />
     <Compile Include="Assets\Plugins\UniRx\Examples\Sample03_GameObjectAsObservable.cs" />
@@ -451,53 +311,12 @@
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\YieldInstructionCache.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\Thread.cs" />
     <Compile Include="Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\ThreadPoolScheduler_UnityWinRT.cs" />
-    <None Include="Assets\Plugins\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
-    <None Include="Assets\Plugins\NGUI\ReadMe - 3.12.0.txt" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Models\Orc\Orc Skin.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
-    <None Include="Assets\Plugins\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored 2.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Shaders\Unlit - Masked Colored.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Masked 3.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text.shader" />
     <None Include="Assets\Plugins\UniRx\ReadMe.txt" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
-    <None Include="Assets\Plugins\NGUI\Examples\Shaders\Refractive.shader" />
-    <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Shaders\Unlit - Depth.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
-    <None Include="Assets\Plugins\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
-    <None Include="Assets\Plugins\NGUI\Examples\Resources\Localization.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>F:/GitHub/RollingPlanet2D/Project/RollingPlanet2D/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/GitHub/JungukHom/ChristmasInAugust/Project/RollingPlanet2D/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>F:/GitHub/RollingPlanet2D/Project/RollingPlanet2D/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/GitHub/JungukHom/ChristmasInAugust/Project/RollingPlanet2D/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -689,13 +508,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.1.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/sky/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/sky/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/sky/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

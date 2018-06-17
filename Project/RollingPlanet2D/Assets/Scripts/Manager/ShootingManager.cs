@@ -22,7 +22,7 @@ namespace Manager
         private readonly float stageTwoDelayTIme = 20.0f;
         private readonly float stageThreeDelayTime = 60.0f;
         private readonly float stageFourDelayTIme = 15.0f;
-        private readonly float stageFiveDelayTime = 120.0f;
+        private readonly float stageFiveDelayTime = 90.0f;
 
         private enum Stage
         {

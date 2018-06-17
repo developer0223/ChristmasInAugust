@@ -68,7 +68,7 @@ namespace Manager
 
         public void FadeOut()
         {
-            effectManager.FadeOut(blackWall, 2.0f, (x) =>
+            effectManager.FadeOut(blackWall, 1.0f, (x) =>
             {
                 // do nothing
             });
@@ -77,7 +77,7 @@ namespace Manager
         public void FadeIn()
         {
             Debug.Log("fadeIn");
-            effectManager.FadeIn(blackWall, 2.0f, (x) =>
+            effectManager.FadeIn(blackWall, 1.0f, (x) =>
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Restart");
                 Debug.Log("restart");

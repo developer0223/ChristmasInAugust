@@ -11,6 +11,7 @@ namespace Manager.Lobby
         public Image playButton;
         public Image playText;
         public Image tutorialButton;
+        public Text tutorialText;
         public Canvas toturialPopUp;
         public Image blackWall;
 
@@ -35,11 +36,12 @@ namespace Manager.Lobby
         private IEnumerator StartFadeIn()
         {
             yield return new WaitForSeconds(delayTime);
-            effectManager.FadeIn(playText, fadeInTime, (x) => Debug.Log("Lobby.PlayText fadeIn complete."));
+            effectManager.FadeIn(playText, fadeInTime, (x) => DoNothing());
             yield return new WaitForSeconds(1.0f);
-            effectManager.FadeIn(playButton, fadeInTime, (x) => Debug.Log("Lobby.PlayButton fadeIn complete."));
+            effectManager.FadeIn(playButton, fadeInTime, (x) => DoNothing());
             yield return new WaitForSeconds(1.0f);
             effectManager.FadeIn(tutorialButton, fadeInTime, (x) => DoNothing());
+            effectManager.FadeIn(tutorialText, fadeInTime);
             yield return null;
         }
 
@@ -66,7 +68,7 @@ namespace Manager.Lobby
                 {
                     isPopUpDisplaying = !isPopUpDisplaying;
                     toturialPopUp.gameObject.SetActive(isPopUpDisplaying);
-                    
+
                 });
         }
 
