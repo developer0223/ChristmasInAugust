@@ -11,7 +11,7 @@ namespace Player
     public class Player : MonoBehaviour
     {
         #region Properties
-        public float Speed { get; set; } = 100.0f;
+        public float Speed { get; set; } = 50.0f;
         public int Hp { get; set; } = 100;
         public float AvoidTime { get; set; } = 3.0f;
         public float BlinkingTime { get; set; } = 0.2f;
@@ -60,12 +60,12 @@ namespace Player
 
         private void Update()
         {
-#if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+#if UNITY_STANDALONE
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 Move(Direction.Left);
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
                 Move(Direction.Right);
             }
