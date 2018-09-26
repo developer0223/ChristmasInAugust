@@ -3,38 +3,40 @@ using UnityEngine;
 
 namespace Bullet
 {
+    // 피해야 하는 별
     public class Bell : SpeedyBullet
     {
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag(Data.Tags.PLANET) || 
-                collision.CompareTag(Data.Tags.CLOUD))
+            if (collision.CompareTag(Data.Tags.PLANET))
             {
-                ShowParticle();
+                if (!Data.IsEasterEgg)
+                    AddScore();
+
+                Destroy(gameObject);
+            }
+            else if (collision.CompareTag(Data.Tags.CLOUD))
+            {
+                if (Data.IsEasterEgg)
+                    AddScore();
+
                 PlayDestroySound();
                 Destroy(gameObject);
-                if (!Data.IsEasterEgg)
-                {
-                    AddScore();
-                }
             }
             else if (collision.CompareTag(Data.Tags.PLAYER))
             {
-                Destroy(gameObject);
                 if (Data.IsEasterEgg)
                 {
                     AddScore();
                     PlayDestroySound();
                 }
                 else
-                {
                     collision.gameObject.GetComponent<Player.Player>().Damage(Damage);
-                }
+
+                Destroy(gameObject);
             }
             else
-            {
                 Debug.LogWarning("Another tag detected.");
-            }
         }
     }
 }

@@ -8,6 +8,10 @@ TagManager:
   - Planet
   - Enemy
   - Cloud
+  - SilverSnow
+  - YellowSnow
+  - AngryBullet
+  - GrumpyBullet
   layers:
   - Default
   - TransparentFX

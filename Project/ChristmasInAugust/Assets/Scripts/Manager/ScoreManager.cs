@@ -1,8 +1,8 @@
 ﻿using Utility;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
+
+using Utility;
 
 namespace Manager
 {
@@ -11,7 +11,17 @@ namespace Manager
         private Text scoreText;
         private Text bestScoreText;
 
-        public bool IsAlive { get; set; }
+        public bool IsAlive
+        {
+            get
+            {
+                return Data.IsAlive;
+            }
+            set
+            {
+                Data.IsAlive = value;
+            }
+        }
 
         private void Awake()
         {

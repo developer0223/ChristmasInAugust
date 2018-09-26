@@ -59,8 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bullet\Bell.cs" />
+    <Compile Include="Assets\Scripts\Bullet\BulletShapeMaker.cs" />
     <Compile Include="Assets\Scripts\Bullet\Cloud.cs" />
-    <Compile Include="Assets\Scripts\Bullet\Heart.cs" />
     <Compile Include="Assets\Scripts\Bullet\SpeedyBullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\Star.cs" />
     <Compile Include="Assets\Scripts\Bullet\Watch.cs" />
@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Manager\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\Manager\ShootingManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\ShootingManager_.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Player\LeftButton.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />

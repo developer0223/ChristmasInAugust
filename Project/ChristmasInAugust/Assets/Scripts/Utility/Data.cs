@@ -4,6 +4,7 @@ namespace Utility
 {
     public class Data
     {
+        public static bool IsAlive { get; set; } = true;
         public static int Stage { get; set; } = 0;
         public static int GameSpeed { get; set; } = 1;
         public static bool IsEasterEgg = false;
@@ -26,9 +27,9 @@ namespace Utility
 
         public struct PrefabName
         {
-            public const string AngryBullet = "AngryBullet(Clone)";
             public const string SilverSnow = "SilverSnow(Clone)";
             public const string YellowSnow = "YellowSnow(Clone)";
+            public const string AngryBullet = "AngryBullet(Clone)";
             public const string GrumpyBullet = "GrumpyBullet(Clone)";
             public const string Watch = "WatchItem(Clone)";
             public const string Cloud = "CloudItem(Clone)";
@@ -58,6 +59,11 @@ namespace Utility
             public static readonly string PLAYER = "Player";
             public static readonly string CLOUD = "Cloud";
             public static readonly string GAME_MANAGER = "GameManager";
+
+            public const string SILVER_SNOW = "SilverSnow";
+            public const string YELLOW_SNOW = "YellowSnow";
+            public const string ANGRY_BULLET = "AngryBullet";
+            public const string GRUMPY_BULLET = "GrumpyBullet";
         }
 
     }

@@ -11,8 +11,8 @@ namespace Bullet
     public class SpeedyBullet : MonoBehaviour
     {
         #region Property
-        protected float Speed { get; set; } = 250.0f;
         protected int Damage { get; set; } = 10;
+        protected float Speed { get; set; } = 250.0f;
         #endregion
 
         #region Cashed Components
@@ -26,7 +26,6 @@ namespace Bullet
 
         #region Variables
         // public AudioClip audioClip;
-
         protected GameManager gameManager;
         protected GameObject targetObject;
         protected Vector2 direction;
@@ -37,6 +36,7 @@ namespace Bullet
         public GameObject particle;
         public AudioClip destroySound;
 
+
         void Awake()
         {
             transform = GetComponent<Transform>();
@@ -46,12 +46,19 @@ namespace Bullet
             itemManager = gameManager.GetOrCreateManager<ItemManager>();
             soundManager = gameManager.GetOrCreateManager<SoundManager>();
 
+            Collider2D collider = GetComponent<BoxCollider2D>();
+            if (collider == null)
+                collider = GetComponent<CircleCollider2D>();
+            collider.enabled = true;
+            
+            collider.isTrigger = true;
+
             rigidbody2D = GetComponent<Rigidbody2D>();
             rigidbody2D.simulated = true;
             rigidbody2D.gravityScale = 0;
 
-            targetObject = GameObject.FindGameObjectWithTag(Tags.PLANET);
-            direction = targetObject.transform.position - transform.position;
+            //targetObject = GameObject.FindGameObjectWithTag(Data.Tags.PLANET);
+            //direction = targetObject.transform.position - transform.position;
         }
 
         private void Start()
@@ -79,7 +86,7 @@ namespace Bullet
                 case PrefabName.AngryBullet:
                 case PrefabName.SilverSnow:
                 case PrefabName.YellowSnow:
-                    Speed = 250.0f;
+                    Speed = 200;
                     break;
 
                 case PrefabName.GrumpyBullet:
@@ -100,24 +107,70 @@ namespace Bullet
             {
                 return;
             }
-            switch (gameObject.name)
+
+            if (!IsEasterEgg)
             {
-                case PrefabName.AngryBullet:
-                    Score.Avoid += 1;
-                    break;
-                case PrefabName.GrumpyBullet:
-                    Score.Avoid += 2;
-                    break;
-                case PrefabName.SilverSnow:
-                    Score.Snow += 3;
-                    break;
-                case PrefabName.YellowSnow:
-                    Score.Snow += 4;
-                    break;
-                default:
-                    Debug.LogWarning($"diffferent tag : {gameObject.name}");
-                    break;
+                switch (gameObject.tag) // gameObject.name
+                {
+                    case Tags.ANGRY_BULLET:
+                        Score.Avoid += 1;
+                        break;
+                    case Tags.GRUMPY_BULLET:
+                        Score.Avoid += 2;
+                        break;
+                    case Tags.SILVER_SNOW:
+                        Score.Snow += 3;
+                        break;
+                    case Tags.YELLOW_SNOW:
+                        Score.Snow += 4;
+                        break;
+                    default:
+                        Debug.LogWarning($"diffferent tag : {gameObject.name}");
+                        break;
+                }
             }
+            else
+            {
+                switch (gameObject.tag) // gameObject.name
+                {
+                    case Tags.ANGRY_BULLET:
+                        Score.Snow += 3;
+                        break;
+                    case Tags.GRUMPY_BULLET:
+                        Score.Snow += 4;
+                        break;
+                    case Tags.SILVER_SNOW:
+                        Score.Avoid += 1;
+                        break;
+                    case Tags.YELLOW_SNOW:
+                        Score.Avoid += 2;
+                        break;
+                    default:
+                        Debug.LogWarning($"diffferent tag : {gameObject.name}");
+                        break;
+                }
+            }
+            // 이전 코드
+            #region last
+            //switch (gameObject.name)
+            //{
+            //    case PrefabName.AngryBullet:
+            //        Score.Avoid += 1;
+            //        break;
+            //    case PrefabName.GrumpyBullet:
+            //        Score.Avoid += 2;
+            //        break;
+            //    case PrefabName.SilverSnow:
+            //        Score.Snow += 3;
+            //        break;
+            //    case PrefabName.YellowSnow:
+            //        Score.Snow += 4;
+            //        break;
+            //    default:
+            //        Debug.LogWarning($"diffferent tag : {gameObject.name}");
+            //        break;
+            //}
+            #endregion
         }
 
         protected void DestroyThis()

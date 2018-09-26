@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Bullet
 {
+    // 먹을 수 있는 별
     public class Star : SpeedyBullet
     {
         #region Properties
@@ -11,34 +12,37 @@ namespace Bullet
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag(Data.Tags.PLANET) ||
-                collision.CompareTag(Data.Tags.CLOUD))
+            if (collision.CompareTag(Data.Tags.PLANET))
             {
-                Destroy(gameObject);
-
                 if (Data.IsEasterEgg)
-                {
                     AddScore();
-                }
+
+                Destroy(gameObject);
+            }
+            else if (collision.CompareTag(Data.Tags.CLOUD))
+            {
+                AddScore();
+                PlayDestroySound();
+                Destroy(gameObject);
             }
             else if (collision.CompareTag(Data.Tags.PLAYER))
             {
+                ShowParticle();
+                
+
                 if (Data.IsEasterEgg)
-                {
                     collision.gameObject.GetComponent<Player.Player>().Damage(Damage);
-                }
                 else
                 {
-                    AddScore();
-                    ShowParticle();
                     PlayDestroySound();
+                    AddScore();
                 }
+                    
+
                 Destroy(gameObject);
             }
             else
-            {
                 Debug.LogWarning("Another tag detected.");
-            }
         }
     }
 }

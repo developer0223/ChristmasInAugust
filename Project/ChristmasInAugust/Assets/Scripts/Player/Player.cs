@@ -12,7 +12,7 @@ namespace Player
     {
         #region Properties
         public float Speed { get; set; } = 50.0f;
-        public int Hp { get; set; } = 100;
+        public int Hp { get; set; } = 1;
         public float AvoidTime { get; set; } = 3.0f;
         public float BlinkingTime { get; set; } = 0.2f;
         public Direction direction { get; set; } = Direction.None;
@@ -28,7 +28,7 @@ namespace Player
         new protected Rigidbody2D rigidbody2D;
         protected Transform parentTransform;
         protected Animator animator;
-        protected Image hpBar;
+        //protected Image hpBar;
         protected GameManager gameManager;
         protected SpriteRenderer spriteRenderer;
         #endregion
@@ -144,7 +144,7 @@ namespace Player
             rigidbody2D.simulated = true;
             rigidbody2D.gravityScale = 0;
 
-            hpBar = GameObject.Find("HpBarFill").GetComponent<Image>();
+            //hpBar = GameObject.Find("HpBarFill").GetComponent<Image>();
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
@@ -220,7 +220,7 @@ namespace Player
             if (!isAvoiding)
             {
                 Hp -= damage;
-                hpBar.fillAmount = Hp * 0.01f;
+                //hpBar.fillAmount = Hp * 0.01f;
                 if (Hp > 0)
                 {
                     Avoid(AvoidTime);
@@ -236,11 +236,11 @@ namespace Player
         /// Increase player's Hp.
         /// </summary>
         /// <param name="healAmount">heal amount</param>
-        public void Heal(int healAmount)
-        {
-            Hp += healAmount;
-            hpBar.fillAmount = Hp * 0.01f;
-        }
+        //public void Heal(int healAmount)
+        //{
+        //    Hp += healAmount;
+        //    hpBar.fillAmount = Hp * 0.01f;
+        //}
 
         /// <summary>
         /// Makes player avoid bullets during avoidTime.

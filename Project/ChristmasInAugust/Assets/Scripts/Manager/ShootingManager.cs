@@ -1,333 +1,144 @@
-﻿using Enemy;
-using Utility;
+﻿using System.Collections;
+using System.Collections.Generic;
+
 using UnityEngine;
-using System.Collections;
+
+using Utility;
 
 namespace Manager
 {
     public class ShootingManager : Manager
     {
-        private CalculateManager calculateManager;
-        private ItemManager itemManager;
+        #region Easy
+        public GameObject Curved_Blue;
+        public GameObject Curved_Red;
+        public GameObject Curved_Score;
+        public GameObject Inazma_Blue;
+        public GameObject Inazma_Red;
+        public GameObject Linear_Blue;
+        public GameObject Linear_Red;
+        public GameObject Linear_Score;
+        #endregion
 
-        ThickTurret thickTurret;
-        RandomTurret randomTurret;
+        #region Normal
+        public GameObject CurvedTwoLine_Blue;
+        public GameObject CurvedTwoLine_Mix;
+        public GameObject CurvedTwoLine_Red;
+        public GameObject CurvedTwoLine_Score;
+        public GameObject LinearTwoLine_Blue;
+        public GameObject LinearTwoLine_Mix;
+        public GameObject LinearTwoLine_Red;
+        public GameObject LinearTwoLine_Score;
+        #endregion
 
-        RotateTurret angryTurret;
-        RotateTurret grumpyTurret;
-        RotateTurret silverTurret;
-        RotateTurret yellowTurret;
+        #region Hard
+        public GameObject Half_Blue;
+        public GameObject Half_Mix;
+        public GameObject Half_Red;
+        public GameObject Half_Score;
+        #endregion
 
-        private readonly float stageOneDelayTIme = 30.0f;
-        private readonly float stageTwoDelayTIme = 20.0f;
-        private readonly float stageThreeDelayTime = 60.0f;
-        private readonly float stageFourDelayTIme = 15.0f;
-        private readonly float stageFiveDelayTime = 90.0f;
+        #region Shape
+        public GameObject Round_Blue;
+        public GameObject Round_Red;
+        public GameObject Round_Score;
+        public GameObject SnowFlower_Bullet;
+        public GameObject SnowFlower_Score;
+        public GameObject Tree_Bullet;
+        public GameObject Tree_Score;
+        #endregion
 
-        private enum Stage
-        {
-            Stage01, Stage02, Stage03, Stage04, Stage05
-        }
-
-        private void Awake()
-        {
-            calculateManager = GetOrCreateManager<CalculateManager>();
-            itemManager = GetOrCreateManager<ItemManager>();
-
-            thickTurret = FindComponent<ThickTurret>("ThickTurret");
-            randomTurret = FindComponent<RandomTurret>("RandomTurret");
-
-            angryTurret = FindComponent<RotateTurret>("AngryTurret");
-            grumpyTurret = FindComponent<RotateTurret>("GrumpyTurret");
-            silverTurret = FindComponent<RotateTurret>("SilverTurret");
-            yellowTurret = FindComponent<RotateTurret>("YellowTurret");
-        }
+        private float BulletInterval { get; } = 2.0f;
 
         private void Start()
         {
-            StartCoroutine(StageManageMent());
+            StartShooting();
         }
 
-        private IEnumerator StageManageMent()
+        public GameObject SpawnPrefab(GameObject bulletsPrefab)
         {
-            StartShooting(Stage.Stage01);
-            yield return new WaitForSeconds(stageOneDelayTIme);
-
-            StartShooting(Stage.Stage02);
-            yield return new WaitForSeconds(stageTwoDelayTIme);
-
-            StartShooting(Stage.Stage03);
-            yield return new WaitForSeconds(stageThreeDelayTime);
-
-            StartShooting(Stage.Stage04);
-            yield return new WaitForSeconds(stageFourDelayTIme);
-
-            // stage 5
-            int hardCount = 1;
-            while (true)
-            {
-                for (int i = 0; i < hardCount; i++)
-                {
-                    StartShooting(Stage.Stage05);
-                }
-                yield return new WaitForSeconds(stageFiveDelayTime);
-            }
+            GameObject obj = Instantiate(bulletsPrefab, Vector2.zero, Quaternion.identity);
+            return obj;
         }
 
-        void StartShooting(Stage stage)
+        public void StartShooting()
         {
-            switch (stage)
-            {
-                case Stage.Stage01:
-                    StartShootingWrap(stage);
-                    break;
-
-                case Stage.Stage02:
-                    RotateTurret(stage);
-                    break;
-
-                case Stage.Stage03:
-                    StartShootingWrap(stage);
-                    break;
-
-                case Stage.Stage04:
-                    RotateTurret(stage);
-                    break;
-
-                case Stage.Stage05:
-                    RotateTurret(stage);
-                    StartShootingWrap(stage);
-                    break;
-            }
-            
+            StartCoroutine(EStartShooting());
         }
 
-        void StartShootingWrap(Stage stage)
+        private IEnumerator EStartShooting()
         {
-            Item(stage);
-            ThickTurret(stage);
-            RandomTurret(stage);
+            yield return null;
+
+            StartCoroutine(EEasy());
+            //StartCoroutine(ENormal());
+            //StartCoroutine(EHard());
+
+            //while (Data.IsAlive)
+            //{
+
+            //}
         }
 
-        private void ThickTurret(Stage stage)
+        private IEnumerator EEasy()
         {
-            float stageTime = 0.0f;
+            yield return null;
 
-            switch (stage)
-            {
-                case Stage.Stage01:
-                    stageTime = stageOneDelayTIme;
-                    break;
-                case Stage.Stage03:
-                    stageTime = stageThreeDelayTime;
-                    break;
-                case Stage.Stage05:
-                    stageTime = stageFiveDelayTime;
-                    break;
-            }
+            SpawnPrefab(Linear_Red); // 일자탄_빨강
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-            int silverStart = calculateManager.GetRandomAngle();
-            int yellowStart = calculateManager.GetRandomAngle();
+            SpawnPrefab(Linear_Blue); // 일자탄_파랑
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-            int silverEnd = calculateManager.GetRandomEndAngle(silverStart);
-            int yellowEnd = calculateManager.GetRandomEndAngle(yellowStart);
+            SpawnPrefab(Linear_Score); // 일자탄_점수
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-            float silverDelayTime = calculateManager.GetRandomDelayTime(0, stageTime / 2);
-            float yellowDelayTime = calculateManager.GetRandomDelayTime(0, stageTime / 2);
+            SpawnPrefab(Curved_Red); // 회오리탄_빨강
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-            float _silverDelayTime = calculateManager.GetRandomDelayTime(stageTime / 2, stageTime);
-            float _yellowDelayTime = calculateManager.GetRandomDelayTime(stageTime / 2, stageTime);
+            SpawnPrefab(Curved_Blue); // 회오리탄_파랑
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-            if (Data.IsEasterEgg)
-            {
-                thickTurret.Shoot(silverStart, silverEnd, Turret.Bullet.AngryBullet, silverDelayTime);
-                thickTurret.Shoot(yellowStart, yellowEnd, Turret.Bullet.GrumpyBullet, yellowDelayTime);
+            SpawnPrefab(Curved_Score); // 회오리탄_점수
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-                thickTurret.Shoot(silverStart, silverEnd, Turret.Bullet.AngryBullet, _silverDelayTime);
-                thickTurret.Shoot(yellowStart, yellowEnd, Turret.Bullet.GrumpyBullet, _yellowDelayTime);
-            }
-            else // normal play
-            {
-                thickTurret.Shoot(silverStart, silverEnd, Turret.Bullet.SilverSnow, silverDelayTime);
-                thickTurret.Shoot(yellowStart, yellowEnd, Turret.Bullet.YellowSnow, yellowDelayTime);
+            SpawnPrefab(Inazma_Red); // 번개탄_빨강
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-                thickTurret.Shoot(silverStart, silverEnd, Turret.Bullet.SilverSnow, _silverDelayTime);
-                thickTurret.Shoot(yellowStart, yellowEnd, Turret.Bullet.YellowSnow, _yellowDelayTime);
-            }
+            SpawnPrefab(Inazma_Blue); // 번개탄_파랑
+            yield return new WaitForSecondsRealtime(BulletInterval);
+
+            SpawnPrefab(Round_Score); // 동그라미탄_점수
+            yield return new WaitForSecondsRealtime(BulletInterval);
+
+            SpawnPrefab(Round_Red); // 동그라미탄_빨강
+            yield return new WaitForSecondsRealtime(BulletInterval);
+
+            SpawnPrefab(Round_Blue); // 동그라미탄_파랑
+            yield return new WaitForSecondsRealtime(BulletInterval);
+
+            SpawnPrefab(Round_Score); // 동그라미탄_점수
+            yield return new WaitForSecondsRealtime(BulletInterval);
+
+            SpawnPrefab(Tree_Bullet); // 크리스마스트리_탄막
+            yield return new WaitForSecondsRealtime(BulletInterval);
+
+            SpawnPrefab(SnowFlower_Bullet); // 눈꽃_탄막
+            yield return new WaitForSecondsRealtime(BulletInterval);
         }
 
-        private void RandomTurret(Stage stage)
+        private IEnumerator ENormal()
         {
-            float playTime = 0.0f;
-            float delayTime = 0.0f;
+            yield return null;
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-            switch (stage)
-            {
-                case Stage.Stage01:
-                    playTime = stageOneDelayTIme;
-                    delayTime = 0.5f;
-                    break;
-
-                case Stage.Stage02:
-                    DoNothing();
-                    break;
-
-                case Stage.Stage03:
-                    playTime = stageThreeDelayTime;
-                    delayTime = 0.35f;
-                    break;
-
-                case Stage.Stage04:
-                    DoNothing();
-                    break;
-
-                case Stage.Stage05:
-                    playTime = stageFiveDelayTime;
-                    delayTime = 0.2f;
-                    break;
-            }
-
-            if (Data.IsEasterEgg)
-            {
-                randomTurret.Shoot(playTime, delayTime * 2, Turret.Bullet.AngryBullet);
-                randomTurret.Shoot(playTime, delayTime * 2, Turret.Bullet.GrumpyBullet);
-
-                randomTurret.Shoot(playTime, delayTime, Turret.Bullet.SilverSnow);
-                randomTurret.Shoot(playTime, delayTime, Turret.Bullet.YellowSnow);
-            }
-            else
-            {
-                randomTurret.Shoot(playTime, delayTime, Turret.Bullet.AngryBullet);
-                randomTurret.Shoot(playTime, delayTime, Turret.Bullet.GrumpyBullet);
-
-                randomTurret.Shoot(playTime, delayTime * 2, Turret.Bullet.SilverSnow);
-                randomTurret.Shoot(playTime, delayTime * 2, Turret.Bullet.YellowSnow);
-            }
         }
 
-        private void RotateTurret(Stage stage)
+        private IEnumerator EHard()
         {
-            float playTime = 0.0f; // = duration
-            float stageTime = 0.0f;
-            float delayTime = 0.0f;
+            yield return null;
+            yield return new WaitForSecondsRealtime(BulletInterval);
 
-            switch (stage)
-            {
-                case Stage.Stage01:
-                    DoNothing();
-                    return;
-
-                case Stage.Stage02:
-                    playTime = 4.0f;
-                    stageTime = stageTwoDelayTIme;
-                    delayTime = 4.0f;
-                    break;
-
-                case Stage.Stage03:
-                    playTime = Random.Range(1.0f, 2.0f);
-                    stageTime = stageThreeDelayTime;
-                    delayTime = 10.0f;
-                    break;
-
-                case Stage.Stage04:
-                    playTime = 3.0f;
-                    stageTime = stageFourDelayTIme;
-                    delayTime = 3.0f;
-                    break;
-
-                case Stage.Stage05:
-                    playTime = Random.Range(1.5f, 3.0f);
-                    stageTime = stageFiveDelayTime;
-                    delayTime = 15.0f;
-                    break;
-            }
-
-            int randomTurret;
-            RotateTurret turret;
-            for (float i = 0.0f; i < stageTime; i+= delayTime)
-            {
-                randomTurret = Random.Range(0, 2);
-
-                if (Data.IsEasterEgg)
-                {
-                    turret = (randomTurret == 1 ? silverTurret : yellowTurret);
-                }
-                else
-                {
-                    turret = (randomTurret == 1 ? angryTurret : grumpyTurret);
-                }
-                
-                float _delay = calculateManager.GetRandomDelayTime(i, i + delayTime);
-                turret.Shoot(playTime, _delay);
-            }
-        }
-
-        private void Item(Stage stage)
-        {
-            float stageTime = GetStageDelayTime(stage);
-            float cloudDelayTime = 0.0f;
-            float watchDelayTime = 0.0f;
-
-            switch (stage)
-            {
-                case Stage.Stage01:
-                    cloudDelayTime = 15.0f;
-                    watchDelayTime = 30.0f;
-                    break;
-
-                case Stage.Stage02:
-                    cloudDelayTime = 20.0f;
-                    watchDelayTime = 10.0f;
-                    break;
-
-                case Stage.Stage03:
-                    cloudDelayTime = 10.0f;
-                    watchDelayTime = 20.0f;
-                    break;
-
-                case Stage.Stage04:
-                    cloudDelayTime = 7.5f;
-                    watchDelayTime = 5.0f;
-                    break;
-
-                case Stage.Stage05:
-                    cloudDelayTime = 8.0f;
-                    watchDelayTime = 15.0f;
-                    break;
-            }
-
-            for (float i = 0.0f; i < stageTime; i += cloudDelayTime)
-            {
-                float _delay = calculateManager.GetRandomDelayTime(i, i + cloudDelayTime);
-                itemManager.SpawnCloud(_delay);
-                // itemManager.SpawnCloud(_delay);
-            }
-
-            for (float i = 0.0f; i < stageTime; i += watchDelayTime)
-            {
-                float _delay = calculateManager.GetRandomDelayTime(i, i + watchDelayTime);
-                itemManager.SpawnSlowWatch(_delay);
-                // itemManager.SpawnSlowWatch(_delay);
-            }
-        }
-
-        // no useage
-        private float GetStageDelayTime(Stage stage)
-        {
-            float result = 0.0f;
-            switch (stage)
-            {
-                case Stage.Stage01:
-                    result = stageOneDelayTIme;
-                    break;
-                case Stage.Stage03:
-                    result = stageThreeDelayTime;
-                    break;
-                case Stage.Stage05:
-                    result = stageFiveDelayTime;
-                    break;
-            }
-            return result;
         }
     }
 }
