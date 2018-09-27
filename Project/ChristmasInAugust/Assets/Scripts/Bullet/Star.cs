@@ -29,7 +29,6 @@ namespace Bullet
             {
                 ShowParticle();
                 
-
                 if (Data.IsEasterEgg)
                     collision.gameObject.GetComponent<Player.Player>().Damage(Damage);
                 else
@@ -37,12 +36,11 @@ namespace Bullet
                     PlayDestroySound();
                     AddScore();
                 }
-                    
 
                 Destroy(gameObject);
             }
-            else
-                Debug.LogWarning("Another tag detected.");
+            //else
+                //Debug.LogWarning("Another tag detected.");
         }
     }
 }

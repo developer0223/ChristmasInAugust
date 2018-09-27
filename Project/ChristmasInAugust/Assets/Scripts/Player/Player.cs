@@ -185,24 +185,29 @@ namespace Player
             {
                 case Direction.Left:
                     dir = 1;
-                    animator.SetBool(LEFT, true);
-                    animator.SetBool(RIGHT, false);
-                    animator.SetBool(IDLE, false);
+                    SetAnimation(LEFT);
                     break;
+
                 case Direction.Right:
                     dir = -1;
-                    animator.SetBool(LEFT, false);
-                    animator.SetBool(RIGHT, true);
-                    animator.SetBool(IDLE, false);
+                    SetAnimation(RIGHT);
                     break;
+
                 case Direction.None:
                     CurrentState = State.Idle;
-                    animator.SetBool(LEFT, false);
-                    animator.SetBool(RIGHT, false);
-                    animator.SetBool(IDLE, true);
+                    SetAnimation(IDLE);
                     break;
             }
             return false;
+        }
+
+        private void SetAnimation(string animationName)
+        {
+            animator.SetBool(LEFT, false);
+            animator.SetBool(RIGHT, false);
+            animator.SetBool(IDLE, false);
+
+            animator.SetBool(animationName, true);
         }
 
         private void MoveTo(int direction)

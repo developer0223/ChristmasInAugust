@@ -6,7 +6,7 @@ using static Utility.Data;
 
 namespace Bullet
 {
-    [RequireComponent(typeof(Rigidbody2D))]
+    //[RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(BoxCollider2D))]
     public class SpeedyBullet : MonoBehaviour
     {
@@ -53,9 +53,12 @@ namespace Bullet
             
             collider.isTrigger = true;
 
+            // 임시방편
             rigidbody2D = GetComponent<Rigidbody2D>();
-            rigidbody2D.simulated = true;
-            rigidbody2D.gravityScale = 0;
+            Destroy(rigidbody2D);
+            //rigidbody2D = GetComponent<Rigidbody2D>();
+            //rigidbody2D.simulated = false;
+            //rigidbody2D.gravityScale = 0;
 
             //targetObject = GameObject.FindGameObjectWithTag(Data.Tags.PLANET);
             //direction = targetObject.transform.position - transform.position;
@@ -64,7 +67,7 @@ namespace Bullet
         private void Start()
         {
             SetSpeedByName();
-            rigidbody2D.AddForce(direction.normalized * Speed * GameSpeed);
+            //rigidbody2D.AddForce(direction.normalized * Speed * GameSpeed);
         }
 
         public void ShowParticle()
@@ -86,11 +89,11 @@ namespace Bullet
                 case PrefabName.AngryBullet:
                 case PrefabName.SilverSnow:
                 case PrefabName.YellowSnow:
-                    Speed = 200;
+                    Speed = 200.0f;
                     break;
 
                 case PrefabName.GrumpyBullet:
-                    Speed = 200.0f;
+                    Speed = 250.0f;
                     break;
 
                 case PrefabName.Watch:

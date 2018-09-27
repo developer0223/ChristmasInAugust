@@ -10,11 +10,11 @@ namespace Bullet
     [RequireComponent(typeof(Rigidbody2D))]
     public class BulletShapeMaker : MonoBehaviour
     {
-        protected float Speed { get; set; } = 250.0f;
+        protected float Speed { get; set; } = 200.0f;
 
         new private Rigidbody2D rigidbody2D;
         private Vector2 direction;
-        protected GameObject targetObject;
+        public GameObject targetObject;
 
         private void Awake()
         {

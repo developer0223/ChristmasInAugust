@@ -11,7 +11,10 @@ namespace Bullet
             if (collision.CompareTag(Data.Tags.PLANET))
             {
                 if (!Data.IsEasterEgg)
+                {
                     AddScore();
+                    ShowParticle();
+                }
 
                 Destroy(gameObject);
             }
@@ -35,8 +38,8 @@ namespace Bullet
 
                 Destroy(gameObject);
             }
-            else
-                Debug.LogWarning("Another tag detected.");
+            //else
+            //    Debug.LogWarning("Another tag detected.");
         }
     }
 }
