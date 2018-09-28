@@ -14,7 +14,7 @@ namespace Bullet
 
         new private Rigidbody2D rigidbody2D;
         private Vector2 direction;
-        public GameObject targetObject;
+        private GameObject targetObject;
 
         private void Awake()
         {
