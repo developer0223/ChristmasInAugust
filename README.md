@@ -14,6 +14,7 @@ Development Environment : Unity3D 2018.1.0f2
  - Api Compatibility Level : .NET 4.x
  - Scripting Runtime Version : .NET 4.x Equivalent
 ```
+You should change this settings manually because Unity doesn't change it automatically.
 
 <hr>
 
@@ -30,3 +31,4 @@ Development Environment : Unity3D 2018.1.0f2
  - API 호환성 수준 : .NET 4.x
  - 스크립팅 런타임 버전 : .NET 4.x Equivalent
 ```
+유니티 버전의 특성상 자동으로 변경되지 않는 부분입니다. 수동으로 변경해야 합니다.
