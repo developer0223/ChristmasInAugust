@@ -117,11 +117,16 @@
 </br></br>
 
 
-### 구름
-<img src="/Images/Items/(tiny)CloudItem.png" width=100 height=75></img></br>
+### 아이템
 ```
 플레이 중 랜덤하게 생성되는 아이템입니다.
+```
 
+</br>
+
+#### 구름
+<img src="/Images/Items/(tiny)CloudItem.png" width=100 height=75></img></br>
+```
 획득 즉시 자동으로 사용됩니다.
 
 사용 시 플레이어의 머리 위에서 4초동안 구름 우산을 씌워주며,
@@ -135,11 +140,9 @@
 </br></br>
 
 
-### 모래시계
+#### 모래시계
 <img src="/Images/Items/(tiny)SlowWatchItem.png" width=75 height=75></img></br>
 ```
-플레이 중 랜덤하게 생성되는 아이템입니다.
-
 획득 시 아이템 개수가 저장됩니다.
 
 사용 시 5초동안 행성으로 떨어지는 모든 별똥별의 속도가 1/2 감소합니다.
