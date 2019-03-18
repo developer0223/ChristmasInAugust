@@ -38,8 +38,8 @@
 </br></br>
  
 
-### 탄막
- - 피해야하는 별똥별입니다. 한 번이라도 부딛히면 게임이 종료됩니다.
+### 별똥별
+ - 한 번이라도 부딛히면 게임이 종료됩니다.
  
  </br>
  
@@ -129,26 +129,54 @@ Development Environment : Unity3D 2018.1.0f2
 ## 게임 소개
 
 ### Planet
-<img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img>
  - (CharacterName)'s Planet. Can move anywhere on planet. 360°
+
+</br>
+
+<img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img></br>
+```
+... explain
+```
 
 
 </br></br>
 
 
 ### Meteor
-<img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img>
-<img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img>
  - Stardust that has to dodge. Game over even only one hit.
+
+</br>
+
+<img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img></br>
+```
+... explain
+```
+
+<img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img></br>
+```
+... explain
+```
+
 
 
 </br></br>
 
 
 ### Snowflowers
-<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img>
-<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img>
 - Snowflower that has to collect. Yellow one gets (n)points, white one gets (m)points.
+
+</br>
+
+<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img></br>
+```
+Golden snowflower. Get (n)points when player collects.
+```
+
+<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img></br>
+```
+Silver snowflower. Get (m)points when player collects.
+```
+
 
 
 </br></br>
