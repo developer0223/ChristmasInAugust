@@ -29,7 +29,7 @@ Development Environment : Unity3D 2018.1.0f2
 
 
 <b><h4>ETC.</h4></b>
-> [Privacy Policy](https://developer0223.tistory.com/2, "Privacy Policy")
+> [Privacy Policy](https://developer0223.tistory.com/2/, "Privacy Policy")
 
 
 
@@ -64,7 +64,7 @@ Development Environment : Unity3D 2018.1.0f2
 
 
 <b><h4>기타</h4></b>
-> [개인정보 처리방침](https://developer0223.tistory.com/2, "개인정보 ")
+> [개인정보 처리방침](https://developer0223.tistory.com/2/, "개인정보 ")
 
 
 
