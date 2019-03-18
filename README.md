@@ -190,12 +190,12 @@
 
 
 
-# English
+# English (Will be updated after Korean readme.md has finished QAQ)
 
 ## Summary
 ### Developmane Environment & Period
 ```
-Develop Period : 2 months
+Develop Period : About 75 days
 Development Environment : Unity3D 2018.1.0f2
 ```
 
