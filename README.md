@@ -190,7 +190,9 @@
 
 
 
-# English (Will be updated after Korean readme.md has finished QAQ)
+# English 
+
+<h2><b>!! (Will be updated after Korean readme.md has finished QAQ) !!</b></h2>
 
 ## Summary
 ### Developmane Environment & Period
