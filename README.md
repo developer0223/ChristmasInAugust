@@ -1,6 +1,7 @@
 # Christmas In August :: 8월의 크리스마스
 
-==================================================
+<hr>
+
 # 한국어
 
 
@@ -16,7 +17,8 @@ Edit - Project Settings - Player - Other Settings - Configuration
 Api Compatibility Level : .NET 4.x
 ```
 
-==================================================
+<hr>
+
 # English
 
 <h1>Preparing...</h1>
