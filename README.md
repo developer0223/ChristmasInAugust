@@ -21,8 +21,6 @@ Api Compatibility Level : .NET 4.x
 
 <h3>English</h3>
 
-<h2>Preparing...</h2>
-
 <b><h5>[Summary]</h5></b>
 ```
 Development environment : Unity3D 2018.1.0f2
