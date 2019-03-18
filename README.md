@@ -27,11 +27,19 @@
 ### 행성
 <img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img>
  - (캐릭터명)이(가) 서있는 행성입니다. 행성 360° 어디로든 돌아다닐 수 있습니다.
+ 
+ 
+</br></br>
+ 
 
 ### 탄막
 <img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img>
 <img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img>
  - 피해야하는 별똥별입니다. 한 번이라도 부딛히면 게임이 종료됩니다.
+
+
+</br></br>
+
 
 ### 눈꽃
 <img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img>
@@ -99,15 +107,24 @@ Development Environment : Unity3D 2018.1.0f2
 <img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img>
  - (CharacterName)'s Planet. Can move anywhere on planet. 360°
 
+
+</br></br>
+
+
 ### Meteor
 <img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img>
 <img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img>
  - Stardust that has to dodge. Game over even only one hit.
 
+
+</br></br>
+
+
 ### Snowflowers
 <img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img>
 <img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img>
 - Snowflower that has to collect. Yellow one gets (n)points, white one gets (m)points.
+
 
 </br></br>
 
