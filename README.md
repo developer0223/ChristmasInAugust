@@ -84,11 +84,15 @@
 
 #### 황금 눈꽃
 <img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img></br>
-수집 시 <b>4</b>점을 획득합니다.
+```
+수집 시 4점을 획득합니다.
+```
 
 #### 은색 눈꽃
 <img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img></br>
-수집 시 <b>3<b>점을 획득합니다.
+```
+수집 시 3점을 획득합니다.
+```
 
 
 </br></br>
