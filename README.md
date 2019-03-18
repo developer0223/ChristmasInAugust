@@ -82,13 +82,16 @@
 
 </br>
 
+#### 황금 눈꽃
 <img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img></br>
 ```
-황금 눈꽃입니다. 수집 시 4점을 획득합니다.
+수집 시 4점을 획득합니다.
 ```
+
+#### 
 <img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img></br>
 ```
-은색 눈꽃입니다. 수집 시 3점을 획득합니다.
+수집 시 3점을 획득합니다.
 ```
 
 
@@ -99,9 +102,9 @@
 ```
 한 번이라도 부딛히면 게임이 종료됩니다.
 ```
- 
- </br>
- 
+
+</br>
+
 <img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img></br>
 ```
 ... 설명
