@@ -16,7 +16,10 @@
 ```
 
 ### 앱 아이콘
-<img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img>
+<img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img></br>
+```
+... 설명
+```
 
 
 </br></br>
@@ -26,7 +29,7 @@
 
 ### 행성
 ```
-(캐릭터명)이(가) 살고있는 . 행성 360° 어디로든 돌아다닐 수 있습니다.
+(캐릭터명)이(가) 살고있는 곳입니다. 행성의 360° 어디로든 돌아다닐 수 있습니다.
 ```
  
  </br>
@@ -130,7 +133,11 @@ Development Environment : Unity3D 2018.1.0f2
 ```
 
 ### Application Icon
-<img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img>
+<img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img></br>
+```
+... explain
+```
+
 
 </br></br>
 
@@ -169,7 +176,6 @@ Stardust that has to dodge. Game over even only one hit.
 ```
 ... explain
 ```
-
 
 
 </br></br>
