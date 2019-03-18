@@ -36,7 +36,7 @@
 </br></br>
 
 
-## 설정
+## 개발 설정
 > Edit - Project Settings - Player - Other Settings - Configuration
 ```
  - API 호환성 수준 : .NET 4.x
@@ -86,7 +86,7 @@ Development Environment : Unity3D 2018.1.0f2
 </br></br>
 
 
-## Settings
+## Development Settings
 > Edit - Project Settings - Player - Other Settings - Configuration
 ```
  - Api Compatibility Level : .NET 4.x
