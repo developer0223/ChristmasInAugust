@@ -76,42 +76,38 @@
 ## 게임 소개 - 탄막 및 아이템
 
 ### 눈꽃
+```
 점수를 얻을 수 있습니다.
+```
 
 </br>
 
 #### 황금 눈꽃
 <img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img></br>
-```
-수집 시 4점을 획득합니다.
-```
+수집 시 <b>4</b>점을 획득합니다.
 
 #### 은색 눈꽃
 <img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img></br>
-```
-수집 시 3점을 획득합니다.
-```
+수집 시 <b>3<b>점을 획득합니다.
 
 
 </br></br>
 
 
 ### 별똥별
+```
 한 번이라도 부딛히면 게임이 종료됩니다.
+```
 
 </br>
 
 #### 불 별똥별
 <img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img></br>
-```
 ... 설명
-```
 
 #### 얼음 별똥별
 <img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img></br>
-```
 ... 설명
-```
 
 
 </br></br>
