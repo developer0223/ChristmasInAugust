@@ -19,7 +19,8 @@ You should change settings value above manually because Unity doesn't change it 
 
 
 <b><h4>ETC.</h4></b>
-> Privacy Policy : <https://developer0223.tistory.com/2>
+> [Privacy Policy](https://developer0223.tistory.com/2, "Privacy Policy")
+
 <br><br>
 
 
@@ -50,7 +51,7 @@ You should change settings value above manually because Unity doesn't change it 
 
 
 <b><h4>기타</h4></b>
-> 개인정보 처리방침 : <https://developer0223.tistory.com/2>
+> [개인정보 처리방침](https://developer0223.tistory.com/2, "Privacy Policy")
 
 
 
