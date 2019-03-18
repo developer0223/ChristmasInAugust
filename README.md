@@ -44,7 +44,7 @@ Development Environment : Unity3D 2018.1.0f2
 <b><h4>개요</h4></b>
 ```
 개발 기간 : 2달
-개발 툴 : Unity3D (Version - 2018.1.0f2)
+개발 툴 : 유니티3D (버전 - 2018.1.0f2)
 ```
 
 
@@ -64,7 +64,7 @@ Development Environment : Unity3D 2018.1.0f2
 
 
 <b><h4>기타</h4></b>
-> [개인정보 처리방침](https://developer0223.tistory.com/2, "Privacy Policy")
+> [개인정보 처리방침](https://developer0223.tistory.com/2, "개인정보 ")
 
 
 
