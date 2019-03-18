@@ -25,14 +25,44 @@
 </br></br>
 
 
-## 게임 소개
+## 게임 소개 - 조작법
+
+### 플레이어 이동
+<화면 이미지>
+```
+... 설명
+```
+
+</br></br>
+
+
+### 아이템 사용
+<모래시계 부분 확대 이미지>
+```
+... 설명
+```
+
+</br></br>
+
+
+### 게임 일시 정지 및 재개
+<화면 우상단 확대 이미지>
+```
+... 설명
+```
+
+
+</br></br>
+
+
+## 게임 소개 - 행성 및 플레이어
 
 ### 행성
 ```
 (캐릭터명)이(가) 살고있는 곳입니다. 행성의 360° 어디로든 돌아다닐 수 있습니다.
 ```
- 
- </br>
+
+</br>
  
 <img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img></br>
 ```
@@ -41,7 +71,29 @@
 
 
 </br></br>
- 
+
+
+## 게임 소개 - 아이템, 탄막 및 점수
+
+### 구름
+<이미지>
+```
+... 설명
+```
+
+
+</br></br>
+
+
+### 모래시계
+<이미지>
+```
+... 설명
+```
+
+
+</br></br>
+
 
 ### 별똥별
 ```
@@ -84,7 +136,7 @@
 </br></br>
 
 
-### In Game Images
+## 인게임 이미지
 <img src="/Images/GooglePlaystoreImages/1.PNG" width=242 height=433></img>
 <img src="/Images/GooglePlaystoreImages/2.PNG" width=242 height=433></img>
 <img src="/Images/GooglePlaystoreImages/3.PNG" width=242 height=433></img>
