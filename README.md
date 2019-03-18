@@ -1,28 +1,29 @@
 <h1>Christmas In August :: 8월의 크리스마스</h1>
 
-<!--
-![Application Icon](/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png){: width =256 height=256}
--->
-> Application Icon
-<br><img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img><br>
 
 
 </br></br>
 
 
-<h2>English</h2>
+# English
 
-<b><h4>Summary</h4></b>
+##Summary
 ```
 Develop Period : 2 months
 Development Environment : Unity3D 2018.1.0f2
 ```
 
+<!--
+![Application Icon](/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png){: width =256 height=256}
+-->
+<h3><b>Application Icon</h3></b>
+> <img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img>
+
 
 </br></br>
 
 
-<b><h4>Settings</h4></b>
+##Settings##
 > Edit - Project Settings - Player - Other Settings - Configuration
 ```
  - Api Compatibility Level : .NET 4.x
@@ -34,7 +35,7 @@ Development Environment : Unity3D 2018.1.0f2
 </br></br>
 
 
-<b><h4>ETC.</h4></b>
+##ETC.
 > [Privacy Policy](https://developer0223.tistory.com/2)
 
 
@@ -45,9 +46,9 @@ Development Environment : Unity3D 2018.1.0f2
 
 
 
-<h2>한국어</h2>
+# 한국어
 
-<b><h4>개요</h4></b>
+## 개요
 ```
 개발 기간 : 2달
 개발 툴 : 유니티3D (버전 - 2018.1.0f2)
@@ -57,7 +58,7 @@ Development Environment : Unity3D 2018.1.0f2
 </br></br>
 
 
-<b><h4>설정</h4></b>
+## 설정
 > Edit - Project Settings - Player - Other Settings - Configuration
 ```
  - API 호환성 수준 : .NET 4.x
@@ -69,7 +70,7 @@ Development Environment : Unity3D 2018.1.0f2
 </br></br>
 
 
-<b><h4>기타</h4></b>
+## 기타
 > [개인정보 처리방침](https://developer0223.tistory.com/2)
 
 
