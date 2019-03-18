@@ -7,8 +7,8 @@
 [개요]<br>
 개발 툴 : Unity3D 2018.1.0f2<br>
 개발 기간 : 2달<br>
-
-
+<br>
+<br>
 [유니티 설정]<br>
     => Edit - Project Settings - Player - Other Settings - Configuration<br>
         스크립팅 런타임 버전 : .NET 4.x Equivalent<br>
