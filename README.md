@@ -22,7 +22,7 @@ Development Environment : Unity3D 2018.1.0f2
  - Api Compatibility Level : .NET 4.x
  - Scripting Runtime Version : .NET 4.x Equivalent
 ```
-You should change settings value above manually because Unity doesn't change it automatically.
+ - You should change settings value above manually because Unity doesn't change it automatically.
 
 
 </br></br>
