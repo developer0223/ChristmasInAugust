@@ -6,7 +6,6 @@
 ```
 Develop Period : 2 months
 Development Environment : Unity3D 2018.1.0f2
-
 ```
 
 <b><h4>Settings</h4></b>
@@ -16,15 +15,18 @@ Development Environment : Unity3D 2018.1.0f2
  - Scripting Runtime Version : .NET 4.x Equivalent
 ```
 You should change settings value above manually because Unity doesn't change it automatically.
+<br><br>
+
 
 <b><h4>ETC.</h4></b>
-
 > Privacy Policy : <https://developer0223.tistory.com/2>
+<br><br>
 
 
-</br></br></br>
+<br><br><br>
 <hr>
-</br></br></br>
+<br><br><br>
+
 
 
 <h2>한국어</h2>
@@ -33,8 +35,10 @@ You should change settings value above manually because Unity doesn't change it 
 ```
 개발 기간 : 2달
 개발 툴 : Unity3D (Version - 2018.1.0f2)
-
 ```
+<br><br>
+
+
 <b><h4>설정</h4></b>
 > Edit - Project Settings - Player - Other Settings - Configuration
 ```
@@ -42,9 +46,12 @@ You should change settings value above manually because Unity doesn't change it 
  - 스크립팅 런타임 버전 : .NET 4.x Equivalent
 ```
 위의 설정값은 유니티 버전의 특성상 자동으로 변경되지 않아 직접 변경해야 합니다.
+<br><br>
+
 
 <b><h4>기타</h4></b>
 > 개인정보 처리방침 : <https://developer0223.tistory.com/2>
 
 
-</br></br></br>
+
+<br><br><br>
