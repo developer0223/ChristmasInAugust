@@ -8,12 +8,13 @@
 # English
 
 ## Summary
+### Developmane Environment & Period
 ```
 Develop Period : 2 months
 Development Environment : Unity3D 2018.1.0f2
 ```
 
-<h3><b>Application Icon</h3></b>
+### Application Icon
 <img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128>
 
 
@@ -46,12 +47,13 @@ Development Environment : Unity3D 2018.1.0f2
 # 한국어
 
 ## 개요
+### 개발 환경 및 일정
 ```
 개발 기간 : 2달
 개발 툴 : 유니티3D (버전 - 2018.1.0f2)
 ```
 
-<h3><b>앱 아이콘</h3></b>
+### 앱 아이콘
 <img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128>
 
 </br></br>
