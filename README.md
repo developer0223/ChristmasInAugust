@@ -7,7 +7,7 @@
 
 # English
 
-##Summary
+## Summary
 ```
 Develop Period : 2 months
 Development Environment : Unity3D 2018.1.0f2
@@ -17,13 +17,15 @@ Development Environment : Unity3D 2018.1.0f2
 ![Application Icon](/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png){: width =256 height=256}
 -->
 <h3><b>Application Icon</h3></b>
-> <img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img>
+</br>
+<img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128>
+</br>
 
 
 </br></br>
 
 
-##Settings##
+## Settings
 > Edit - Project Settings - Player - Other Settings - Configuration
 ```
  - Api Compatibility Level : .NET 4.x
@@ -35,7 +37,7 @@ Development Environment : Unity3D 2018.1.0f2
 </br></br>
 
 
-##ETC.
+## ETC.
 > [Privacy Policy](https://developer0223.tistory.com/2)
 
 
