@@ -1,6 +1,6 @@
 <h2>Christmas In August :: 8월의 크리스마스</h2>
 
-<h3>Language : English</h3>
+<h2>English</h2>
 
 <b><h4>Summary</h4></b>
 ```
@@ -27,7 +27,7 @@ You should change settings value above manually because Unity doesn't change it 
 </br></br></br>
 
 
-<h3>언어 : 한국어</h3>
+<h2>한국어</h2>
 
 <b><h4>개요</h4></b>
 ```
