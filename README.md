@@ -21,7 +21,11 @@ You should change settings value above manually because Unity doesn't change it 
 
 > Privacy Policy : <https://developer0223.tistory.com/2>
 
+
+
 <hr>
+
+
 
 <h3>언어 : 한국어</h3>
 
@@ -41,6 +45,7 @@ You should change settings value above manually because Unity doesn't change it 
 
 <b><h4>기타</h4></b>
 > 개인정보 처리방침 : <https://developer0223.tistory.com/2>
+
 
 
 
