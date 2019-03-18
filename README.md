@@ -25,7 +25,9 @@
 ## 게임 소개
 
 ### 행성
- - (캐릭터명)이(가) 서있는 행성입니다. 행성 360° 어디로든 돌아다닐 수 있습니다.
+```
+(캐릭터명)이(가) 살고있는 . 행성 360° 어디로든 돌아다닐 수 있습니다.
+```
  
  </br>
  
@@ -39,7 +41,9 @@
  
 
 ### 별똥별
- - 한 번이라도 부딛히면 게임이 종료됩니다.
+```
+한 번이라도 부딛히면 게임이 종료됩니다.
+```
  
  </br>
  
@@ -58,7 +62,9 @@
 
 
 ### 눈꽃
-- 점수를 얻을 수 있습니다.
+```
+점수를 얻을 수 있습니다.
+```
 
 </br>
 
@@ -109,6 +115,9 @@
 
 
 </br></br></br>
+<hr>
+</br></br></br>
+
 
 
 # English
@@ -129,7 +138,9 @@ Development Environment : Unity3D 2018.1.0f2
 ## 게임 소개
 
 ### Planet
- - (CharacterName)'s Planet. Can move anywhere on planet. 360°
+```
+Planet that (CharacterName) lives. Can move anywhere on planet. (360°)
+```
 
 </br>
 
@@ -143,7 +154,9 @@ Development Environment : Unity3D 2018.1.0f2
 
 
 ### Meteor
- - Stardust that has to dodge. Game over even only one hit.
+```
+Stardust that has to dodge. Game over even only one hit.
+```
 
 </br>
 
@@ -163,7 +176,9 @@ Development Environment : Unity3D 2018.1.0f2
 
 
 ### Snowflowers
-- Snowflower that has to collect. Yellow one gets (n)points, white one gets (m)points.
+```
+Snowflower that has to collect. Yellow one gets (n)points, white one gets (m)points.
+```
 
 </br>
 
@@ -214,9 +229,5 @@ Silver snowflower. Get (m)points when player collects.
 > [Privacy Policy](https://developer0223.tistory.com/2)
 
 
-
-</br></br></br>
-<hr>
-</br></br></br>
 
 
