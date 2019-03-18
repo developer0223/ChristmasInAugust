@@ -4,7 +4,7 @@
 # 한국어
 
 
-[개요]
+[개요] <br>
 개발 툴 : Unity3D 2018.1.0f2
 개발 기간 : 2달
 
@@ -18,7 +18,7 @@
 # English
 
 
-[Summary]
+[Summary] <br>
 Development environment : Unity3D 2018.1.0f2
 develop period : 2 months
 
