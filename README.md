@@ -9,8 +9,7 @@
 개발 기간 : 2달<br>
 <br>
 <br>
-[유니티 설정]<br>
-    => Edit - Project Settings - Player - Other Settings - Configuration<br>
+[유니티 설정] => Edit - Project Settings - Player - Other Settings - Configuration<br>
         스크립팅 런타임 버전 : .NET 4.x Equivalent<br>
         Api Compatibility Level : .NET 4.x<br>
 <br>
@@ -23,7 +22,6 @@ Development environment : Unity3D 2018.1.0f2<br>
 develop period : 2 months<br>
 <br>
 <br>
-[Unity Settings]<br>
-    => Edit - Project Settings - Player - Other Settings - Configuration<br>
+[Unity Settings] => Edit - Project Settings - Player - Other Settings - Configuration<br>
         Scripting Runtime Version : .NET 4.x Equivalent<br>
         Api Compatibility Level : .NET 4.x<br>
