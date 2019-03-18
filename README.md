@@ -192,7 +192,7 @@
 
 # English 
 
-<h2><b>!! (Will be updated after Korean readme.md has finished QAQ) !!</b></h2>
+<h2><b>!! Will be updated after Korean readme.md has finished :) !!</b></h2>
 
 ## Summary
 ### Developmane Environment & Period
