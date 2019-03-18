@@ -25,17 +25,17 @@
 ## 게임 소개
 
 ### 행성
-<img src="/Images/Planets/(tiny)PlayerPlanet.png" width=300 height=300></img>
+<img src="/Images/Planets/(tiny)PlayerPlanet.png" width=200 height=200></img>
  - (캐릭터명)이(가) 서있는 행성입니다. 행성 360° 어디로든 돌아다닐 수 있습니다.
 
 ### 탄막
-<img src="/Images/Bullets/(tiny)AngryBullet.png" width=200 height=200></img>
-<img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=200 height=200></img>
+<img src="/Images/Bullets/(tiny)AngryBullet.png" width=150 height=150></img>
+<img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=150 height=150></img>
  - 피해야하는 별똥별입니다. 한 번이라도 부딛히면 게임이 종료됩니다.
 
 ### 눈꽃
-<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=200 height=200></img>
-<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=300 height=200></img>
+<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=150 height=150></img>
+<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=150 height=150></img>
 - 수집해야하는 눈꽃입니다. 노란색 눈꽃은 (n)점, 흰색 눈꽃은 (n)점을 획득합니다.
 
 
@@ -96,17 +96,17 @@ Development Environment : Unity3D 2018.1.0f2
 ## 게임 소개
 
 ### Planet
-<img src="/Images/Planets/(tiny)PlayerPlanet.png" width=300 height=300></img>
+<img src="/Images/Planets/(tiny)PlayerPlanet.png" width=200 height=200></img>
  - (CharacterName)'s Planet. Can move anywhere on planet. 360°
 
 ### Meteor
-<img src="/Images/Bullets/(tiny)AngryBullet.png" width=200 height=200></img>
-<img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=200 height=200></img>
+<img src="/Images/Bullets/(tiny)AngryBullet.png" width=100 height=100></img>
+<img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=100 height=100></img>
  - Stardust that has to dodge. Game over even only one hit.
 
 ### Snowflowers
-<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=200 height=200></img>
-<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=300 height=200></img>
+<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=100 height=100></img>
+<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=100 height=100></img>
 - Snowflower that has to collect. Yellow one gets (n)points, white one gets (m)points.
 
 </br></br>
