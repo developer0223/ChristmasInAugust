@@ -25,26 +25,51 @@
 ## 게임 소개
 
 ### 행성
-<img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img>
  - (캐릭터명)이(가) 서있는 행성입니다. 행성 360° 어디로든 돌아다닐 수 있습니다.
  
+ </br>
  
+<img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img></br>
+```
+... 설명
+```
+
+
 </br></br>
  
 
 ### 탄막
-<img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img>
-<img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img>
  - 피해야하는 별똥별입니다. 한 번이라도 부딛히면 게임이 종료됩니다.
+ 
+ </br>
+ 
+<img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img></br>
+```
+... 설명
+```
+
+<img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img></br>
+```
+... 설명
+```
 
 
 </br></br>
 
 
 ### 눈꽃
-<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img>
-<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img>
-- 수집해야하는 눈꽃입니다. 노란색 눈꽃은 (n)점, 흰색 눈꽃은 (n)점을 획득합니다.
+- 점수를 얻을 수 있습니다.
+
+</br>
+
+<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img></br>
+```
+황금 눈꽃입니다. 수집 시 (n)점을 획득합니다.
+```
+<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img></br>
+```
+은색 눈꽃입니다. 수집 시 (m)점을 획득합니다.
+```
 
 
 </br></br>
