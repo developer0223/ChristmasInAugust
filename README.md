@@ -13,13 +13,8 @@ Develop Period : 2 months
 Development Environment : Unity3D 2018.1.0f2
 ```
 
-<!--
-![Application Icon](/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png){: width =256 height=256}
--->
 <h3><b>Application Icon</h3></b>
-</br>
 <img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128>
-</br>
 
 
 </br></br>
@@ -56,6 +51,8 @@ Development Environment : Unity3D 2018.1.0f2
 개발 툴 : 유니티3D (버전 - 2018.1.0f2)
 ```
 
+<h3><b>앱 아이콘</h3></b>
+<img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128>
 
 </br></br>
 
