@@ -11,8 +11,8 @@ develop period : 2 months
 <b><h4>Settings</h4></b>
 > Edit - Project Settings - Player - Other Settings - Configuration
 ```
-Scripting Runtime Version : .NET 4.x Equivalent
-Api Compatibility Level : .NET 4.x
+ - Api Compatibility Level : .NET 4.x
+ - Scripting Runtime Version : .NET 4.x Equivalent
 ```
 
 <hr>
@@ -27,6 +27,7 @@ Api Compatibility Level : .NET 4.x
 <b><h4>설정</h4></b>
 > Edit - Project Settings - Player - Other Settings - Configuration
 ```
-스크립팅 런타임 버전 : .NET 4.x Equivalent
-Api Compatibility Level : .NET 4.x
+ - API 호환성 수준 : .NET 4.x
+ - 스크립팅 런타임 버전 : .NET 4.x Equivalent
+
 ```
