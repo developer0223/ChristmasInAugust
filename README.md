@@ -1,5 +1,11 @@
 <h1>Christmas In August :: 8월의 크리스마스</h1>
 
+<!--
+![Application Icon](/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png){: width =256 height=256}
+-->
+> Application Icon
+<br><img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img><br>
+
 
 </br></br>
 
