@@ -73,25 +73,22 @@
 </br></br>
 
 
-## 게임 소개 - 아이템, 탄막 및 점수
+## 게임 소개 - 탄막 및 아이템
 
-### 구름
-<img src="/Images/Items/(tiny)CloudItem.png" width=100 height=75></img></br>
+### 눈꽃
 ```
-플레이 중 랜덤하게 생성되는 아이템입니다. 획득 즉시 자동으로 사용됩니다.
-!!! 구름 아이템 생성 파티클 내용 추가 필요 !!!
+점수를 얻을 수 있습니다.
 ```
 
+</br>
 
-</br></br>
-
-
-### 모래시계
-<img src="/Images/Items/(tiny)SlowWatchItem.png" width=75 height=75></img></br>
+<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img></br>
 ```
-플레이 중 랜덤하게 생성되는 아이템입니다. 획득 시 아이템 개수가 저장됩니다.
-사용 시 (n)초동안 행성으로 떨어지는 모든 별똥별의 속도가 1/2 감소합니다.
-!!! 모래시계 아이템 생성 파티클 내용 추가 필요 !!!
+황금 눈꽃입니다. 수집 시 (n)점을 획득합니다.
+```
+<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img></br>
+```
+은색 눈꽃입니다. 수집 시 (m)점을 획득합니다.
 ```
 
 
@@ -119,20 +116,34 @@
 </br></br>
 
 
-### 눈꽃
+### 구름
+<img src="/Images/Items/(tiny)CloudItem.png" width=100 height=75></img></br>
 ```
-점수를 얻을 수 있습니다.
+플레이 중 랜덤하게 생성되는 아이템입니다.
+
+획득 즉시 자동으로 사용됩니다.
+
+사용 시 플레이어의 머리 위에서 (n)초동안 구름 우산을 씌워주며,
+
+모든 별똥별을 막고, 눈꽃을 수집합니다.
+
+!!! 구름 아이템 생성 파티클 내용 추가 필요 !!!
 ```
 
-</br>
 
-<img src="/Images/Stars/(tiny)ScroeStar_gold.png" width=50 height=50></img></br>
+</br></br>
+
+
+### 모래시계
+<img src="/Images/Items/(tiny)SlowWatchItem.png" width=75 height=75></img></br>
 ```
-황금 눈꽃입니다. 수집 시 (n)점을 획득합니다.
-```
-<img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img></br>
-```
-은색 눈꽃입니다. 수집 시 (m)점을 획득합니다.
+플레이 중 랜덤하게 생성되는 아이템입니다.
+
+획득 시 아이템 개수가 저장됩니다.
+
+사용 시 (n)초동안 행성으로 떨어지는 모든 별똥별의 속도가 1/2 감소합니다.
+
+!!! 모래시계 아이템 생성 파티클 내용 추가 필요 !!!
 ```
 
 
