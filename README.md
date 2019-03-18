@@ -88,7 +88,7 @@
 수집 시 4점을 획득합니다.
 ```
 
-#### 
+#### 은색 눈꽃
 <img src="/Images/Stars/(tiny)ScroeStar_sliver.png" width=50 height=50></img></br>
 ```
 수집 시 3점을 획득합니다.
@@ -105,11 +105,13 @@
 
 </br>
 
+#### 불 
 <img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img></br>
 ```
 ... 설명
 ```
 
+#### 얼음 별똥별
 <img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img></br>
 ```
 ... 설명
