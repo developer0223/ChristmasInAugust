@@ -18,7 +18,7 @@
 ### 앱 아이콘
 <img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img></br>
 ```
-... 설명
+..
 ```
 
 
@@ -30,7 +30,7 @@
 ### 플레이어 이동
 <화면 이미지>
 ```
-... 설명
+..
 ```
 
 </br></br>
@@ -39,7 +39,7 @@
 ### 아이템 사용
 <모래시계 부분 확대 이미지>
 ```
-... 설명
+...
 ```
 
 </br></br>
@@ -48,7 +48,7 @@
 ### 게임 일시 정지 및 재개
 <화면 우상단 확대 이미지>
 ```
-... 설명 
+...
 ```
 
 
@@ -66,7 +66,7 @@
  
 <img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img></br>
 ```
-... 설명
+...
 ```
 
 
@@ -107,11 +107,11 @@
 
 #### 불 별똥별
 <img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img></br>
-... 설명
+...
 
 #### 얼음 별똥별
 <img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img></br>
-... 설명
+...
 
 
 </br></br>
@@ -207,7 +207,7 @@ Development Environment : Unity3D 2018.1.0f2
 ### Application Icon
 <img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img></br>
 ```
-... explain
+...
 ```
 
 
@@ -225,7 +225,7 @@ Planet that (CharacterName) lives. Can move anywhere on planet. (360°)
 
 <img src="/Images/Planets/(tiny)PlayerPlanet.png" width=150 height=150></img></br>
 ```
-... explain
+...
 ```
 
 
@@ -241,12 +241,12 @@ Stardust that has to dodge. Game over even only one hit.
 
 <img src="/Images/Bullets/(tiny)AngryBullet.png" width=50 height=50></img></br>
 ```
-... explain
+...
 ```
 
 <img src="/Images/Bullets/(tiny)GrumpyBullets.png" width=50 height=50></img></br>
 ```
-... explain
+...
 ```
 
 
