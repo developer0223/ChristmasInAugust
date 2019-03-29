@@ -155,16 +155,16 @@
 
 
 ## 인게임 이미지
-<img src="/Images/GooglePlaystoreImages/1.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/2.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/3.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/01.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/02.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/03.PNG" width=242 height=433></img>
 <br>
-<img src="/Images/GooglePlaystoreImages/4.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/5.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/6.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/04.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/05.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/06.PNG" width=242 height=433></img>
 <br>
-<img src="/Images/GooglePlaystoreImages/7.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/8.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/07.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/08.PNG" width=242 height=433></img>
 
 
 </br></br>
@@ -276,16 +276,16 @@ Silver snowflower. Get (m)points when player collects.
 
 
 ### In Game Images
-<img src="/Images/GooglePlaystoreImages/1.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/2.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/3.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/01.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/02.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/03.PNG" width=242 height=433></img>
 <br>
-<img src="/Images/GooglePlaystoreImages/4.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/5.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/6.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/04.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/05.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/06.PNG" width=242 height=433></img>
 <br>
-<img src="/Images/GooglePlaystoreImages/7.PNG" width=242 height=433></img>
-<img src="/Images/GooglePlaystoreImages/8.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/07.PNG" width=242 height=433></img>
+<img src="/Images/GooglePlaystoreImages/08.PNG" width=242 height=433></img>
 
 
 </br></br>
