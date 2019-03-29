@@ -18,7 +18,7 @@
 ### 앱 아이콘
 <img src="/Images/GooglePlaystoreImages/Icon_ChristmasInAugust.png" width=128 height=128></img></br>
 ```
-..
+...
 ```
 
 
@@ -30,7 +30,7 @@
 ### 플레이어 이동
 <화면 이미지>
 ```
-..
+...
 ```
 
 </br></br>
