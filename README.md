@@ -1,4 +1,4 @@
-#Christmas In August :: 8월의 크리스마스#
+# hristmas In August :: 8월의 크리스마스
 <img src="/Images/GooglePlaystoreImages/Title_Image.png"></img> <!-- width=768 height=375 -->
 
 
