@@ -11,7 +11,7 @@
 ## 개요
 ### 개발 환경 및 기간
 ```
-개발 기간 : 약 75일
+개발 기간 : 약 45일
 개발 툴 : 유니티3D (버전 - 2018.1.0f2)
 ```
 
@@ -200,7 +200,7 @@
 ## Summary
 ### Developmane Environment & Period
 ```
-Develop Period : About 75 days
+Develop Period : About 45 days
 Development Environment : Unity3D 2018.1.0f2
 ```
 
